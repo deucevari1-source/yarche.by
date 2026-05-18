@@ -187,16 +187,16 @@ const BODY = `<section class="inner-hero">
           </div>
           <div class="case-metrics">
             <div>
-              <div class="case-metric-num">3</div>
-              <div class="case-metric-label">сервиса в Docker</div>
+              <div class="case-metric-num">24/7</div>
+              <div class="case-metric-label">приём онлайн-записей</div>
+            </div>
+            <div>
+              <div class="case-metric-num">1 клик</div>
+              <div class="case-metric-label">повторная запись клиента</div>
             </div>
             <div>
               <div class="case-metric-num">Telegram</div>
-              <div class="case-metric-label">бот администратора</div>
-            </div>
-            <div>
-              <div class="case-metric-num">petrovich</div>
-              <div class="case-metric-label">склонение ФИО</div>
+              <div class="case-metric-label">уведомления администратору</div>
             </div>
           </div>
         </div>

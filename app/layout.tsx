@@ -120,7 +120,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${onest.variable} ${unbounded.variable}`}>
+    <html
+      lang="ru"
+      className={`${onest.variable} ${unbounded.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Inline anti-FOUC paint for dark/light themes — matches the legacy site. */}
         <style>{`html{background:#0A0A0A}body{background:transparent}html[data-theme="light"]{background:#F5F5F0}html[data-theme="light"] body{background:#F5F5F0}`}</style>

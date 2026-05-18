@@ -24,6 +24,13 @@ export function GlobalScripts() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Mirror current route segment to <html data-page="..."> so space-bg.js
+  // can detect /cases via MutationObserver and fade in extra elements.
+  useEffect(() => {
+    const seg = pathname.replace(/^\/+/, '').split('/')[0] || 'home';
+    document.documentElement.dataset.page = seg;
+  }, [pathname]);
+
   // Custom-select dropdown + div[href] click navigation — document delegation
   useEffect(() => {
     function onClick(e: MouseEvent) {

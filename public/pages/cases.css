@@ -2,48 +2,6 @@ html[data-theme="light"]{background:#F5F5F0}
 
 html[data-theme="light"] body{background:#F5F5F0}
 
-html[data-page="cases"] { background: #060409; }
-
-html[data-page="cases"]::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 70vmax 90vmax at 22% -10%, rgba(255, 196, 80, 0.42), transparent 55%),
-    radial-gradient(ellipse 70vmax 90vmax at 78% -10%, rgba(255, 220, 120, 0.36), transparent 55%),
-    radial-gradient(ellipse 60vmax 80vmax at 50% -20%, rgba(255, 240, 180, 0.30), transparent 60%),
-    radial-gradient(ellipse 80vmax 60vmax at 50% 110%, rgba(120, 60, 20, 0.45), transparent 60%),
-    linear-gradient(180deg, #0a0612 0%, #0a0408 100%);
-  opacity: 0;
-  animation: stage-in 1.2s ease-out forwards;
-}
-
-html[data-page="cases"]::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.55) 100%);
-  opacity: 0;
-  animation: stage-in 1.4s ease-out 0.1s forwards;
-}
-
-html[data-page="cases"][data-theme="light"] { background: #1a1410; }
-
-html[data-page="cases"][data-theme="light"]::before {
-  background:
-    radial-gradient(ellipse 70vmax 90vmax at 22% -10%, rgba(255, 200, 100, 0.50), transparent 55%),
-    radial-gradient(ellipse 70vmax 90vmax at 78% -10%, rgba(255, 220, 140, 0.45), transparent 55%),
-    radial-gradient(ellipse 80vmax 60vmax at 50% 110%, rgba(80, 40, 20, 0.50), transparent 60%),
-    linear-gradient(180deg, #1a1410 0%, #0e0a08 100%);
-}
-
-@keyframes stage-in { from { opacity: 0; } to { opacity: 1; } }
-
 html[data-page="cases"] .case-card {
   border-color: rgba(255, 200, 100, 0.18);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
