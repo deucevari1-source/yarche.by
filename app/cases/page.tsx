@@ -27,11 +27,11 @@ const BODY = `<section class="inner-hero">
 
   <section class="section" style="padding-top:20px;">
     <div class="cases-filters" role="tablist" aria-label="Фильтр кейсов">
-      <button class="cases-filter" type="button" data-filter="all" aria-pressed="true">Все<span class="count"></span></button>
-      <button class="cases-filter" type="button" data-filter="site" aria-pressed="false">Сайты<span class="count"></span></button>
-      <button class="cases-filter" type="button" data-filter="app" aria-pressed="false">Приложения<span class="count"></span></button>
-      <button class="cases-filter" type="button" data-filter="ai" aria-pressed="false">AI<span class="count"></span></button>
-      <button class="cases-filter" type="button" data-filter="bot" aria-pressed="false">Боты<span class="count"></span></button>
+      <button class="cases-filter" type="button" data-filter="all" aria-pressed="true">Все</button>
+      <button class="cases-filter" type="button" data-filter="site" aria-pressed="false">Сайты</button>
+      <button class="cases-filter" type="button" data-filter="app" aria-pressed="false">Приложения</button>
+      <button class="cases-filter" type="button" data-filter="ai" aria-pressed="false">AI</button>
+      <button class="cases-filter" type="button" data-filter="bot" aria-pressed="false">Боты</button>
     </div>
 
     <div class="cases-grid">
@@ -230,8 +230,8 @@ const BODY = `<section class="inner-hero">
         </div>
       </a>
 
-      <!-- 7. USDT-BOT — hidden until "Show all" -->
-      <a class="case-card animate is-extra" data-category="bot" href="/cases/usdt-exchange-bot">
+      <!-- 7. USDT-BOT -->
+      <a class="case-card animate" data-category="bot" href="/cases/usdt-exchange-bot">
         <div class="case-cover placeholder-preview" style="background:linear-gradient(135deg,#0c4a6e,#0ea5e9,#bae6fd)">
           <div class="placeholder-title">USDT Exchange Bot</div>
         </div>

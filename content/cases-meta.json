@@ -118,8 +118,7 @@
         { "num": "P2P", "label": "обмен USDT" },
         { "num": "24/7", "label": "приём заявок" },
         { "num": "Telegram", "label": "вся коммуникация" }
-      ],
-      "hidden": true
+      ]
     }
   ]
 }
