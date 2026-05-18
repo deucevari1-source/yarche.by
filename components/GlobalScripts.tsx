@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { installTracker, track } from '@/lib/analytics/client';
 
 const API_URL = 'https://bot.yarche.by:5050/api/lead';
 
@@ -29,6 +30,16 @@ export function GlobalScripts() {
   useEffect(() => {
     const seg = pathname.replace(/^\/+/, '').split('/')[0] || 'home';
     document.documentElement.dataset.page = seg;
+  }, [pathname]);
+
+  // Expose window.yarcheTrack once.
+  useEffect(() => {
+    installTracker();
+  }, []);
+
+  // Pageview on initial load and every SPA navigation.
+  useEffect(() => {
+    track('pageview', { title: document.title || undefined });
   }, [pathname]);
 
   // Custom-select dropdown + div[href] click navigation — document delegation
@@ -270,6 +281,7 @@ export function GlobalScripts() {
         })
         .then(() => {
           setState('success');
+          track('form_submit', { service: d.service, page: d.page });
           form!.querySelectorAll('input').forEach((i, idx) => {
             (i as HTMLInputElement).value = idx === 1 ? '+375 (' : '';
           });
