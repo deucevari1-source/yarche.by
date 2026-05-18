@@ -10,7 +10,7 @@
       "industry": "Сборные модули, B2B",
       "year": "2026",
       "url": "https://containers-web.vercel.app",
-      "preview": { "type": "iframe", "src": "https://containers-web.vercel.app" },
+      "preview": { "type": "screenshot", "src": "/images/cases/modul51-desktop.jpg", "alt": "Модуль 51 — главная страница" },
       "summary": "Лидген-сайт с трёхмерной сценой, которая живёт за контентом всех страниц. WebGL-канвас не размонтируется при навигации — 3D-модель плавно меняется по маршрутам.",
       "metrics": [
         { "num": "10", "label": "режимов 3D-сцены" },
@@ -27,7 +27,7 @@
       "industry": "Образование",
       "year": "2025",
       "url": "https://avtoschool.by",
-      "preview": { "type": "iframe", "src": "https://avtoschool.by" },
+      "preview": { "type": "screenshot", "src": "/images/cases/avtoschool-desktop.jpg", "alt": "avtoschool.by — главная страница" },
       "summary": "Независимая платформа выбора автошколы и инструктора с реальными отзывами, рейтингами, ценами по категориям, интерактивной картой и блогом. 100+ объектов в каталоге.",
       "metrics": [
         { "num": "100+", "label": "школ и инструкторов" },
