@@ -38,9 +38,10 @@ const BODY = `<section class="inner-hero">
 
       <!-- 1. MODUL51 — live iframe (containers-web.vercel.app) -->
       <a class="case-card animate" data-category="site" href="/cases/modul51">
-        <div class="case-cover iframe-preview">
+        <div class="case-cover iframe-preview" style="background:linear-gradient(135deg,#0c4a6e,#0ea5e9,#38bdf8)">
           <iframe src="https://containers-web.vercel.app" loading="lazy" title="Модуль 51 preview"
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="iframe-mobile-fallback"><div class="placeholder-title">Модуль 51</div></div>
         </div>
         <div class="case-body">
           <div class="case-meta">
@@ -71,9 +72,10 @@ const BODY = `<section class="inner-hero">
 
       <!-- 2. AVTOSCHOOL — live iframe (avtoschool.by) -->
       <a class="case-card animate delay-1" data-category="app" href="/cases/avtoschool">
-        <div class="case-cover iframe-preview">
+        <div class="case-cover iframe-preview" style="background:linear-gradient(135deg,#dc2626,#f59e0b,#fde047)">
           <iframe src="https://avtoschool.by" loading="lazy" title="avtoschool.by preview"
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="iframe-mobile-fallback"><div class="placeholder-title">avtoschool.by</div></div>
         </div>
         <div class="case-body">
           <div class="case-meta">
