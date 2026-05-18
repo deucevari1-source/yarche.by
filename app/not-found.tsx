@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="hero" style="min-height:80vh; text-align:center;">
   <div class="hero-inner" style="display:flex; flex-direction:column; align-items:center;">
-    <div style="font-size:clamp(6rem, 20vw, 12rem); font-family:'Unbounded',sans-serif; font-weight:900; line-height:1; background:linear-gradient(135deg, var(--yellow), var(--orange)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:24px;">404</div>
-    <h1 style="font-family:'Unbounded',sans-serif; font-weight:700; font-size:clamp(1.4rem, 3vw, 2rem); margin-bottom:16px;">Страница не найдена</h1>
+    <div style="font-size:clamp(6rem, 20vw, 12rem); font-family:var(--font-unbounded),sans-serif; font-weight:900; line-height:1; background:linear-gradient(135deg, var(--yellow), var(--orange)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:24px;">404</div>
+    <h1 style="font-family:var(--font-unbounded),sans-serif; font-weight:700; font-size:clamp(1.4rem, 3vw, 2rem); margin-bottom:16px;">Страница не найдена</h1>
     <p style="color:var(--text-muted); font-size:1.05rem; max-width:440px; line-height:1.6; margin-bottom:40px;">Похоже, эта страница переехала или никогда не существовала. Но мы можем помочь вам найти то, что нужно.</p>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
       <a class="btn-primary" href="/">На главную</a>

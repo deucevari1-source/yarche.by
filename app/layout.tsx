@@ -1,9 +1,36 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import localFont from 'next/font/local';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
 import { GlobalScripts } from '@/components/GlobalScripts';
 import './globals.css';
+
+// next/font/local: emits @font-face inline, auto-preloads, generates
+// adjustFontFallback metrics so the system fallback occupies the same box
+// as the brand font — no FOUT layout jump on swap.
+const unbounded = localFont({
+  src: [
+    { path: '../public/fonts/unbounded-v12-cyrillic_latin-500.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/unbounded-v12-cyrillic_latin-600.woff2', weight: '600', style: 'normal' },
+    { path: '../public/fonts/unbounded-v12-cyrillic_latin-700.woff2', weight: '700', style: 'normal' },
+    { path: '../public/fonts/unbounded-v12-cyrillic_latin-800.woff2', weight: '800', style: 'normal' },
+    { path: '../public/fonts/unbounded-v12-cyrillic_latin-900.woff2', weight: '900', style: 'normal' },
+  ],
+  variable: '--font-unbounded',
+  display: 'swap',
+});
+
+const onest = localFont({
+  src: [
+    { path: '../public/fonts/onest-v9-cyrillic_latin-regular.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/onest-v9-cyrillic_latin-500.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/onest-v9-cyrillic_latin-600.woff2', weight: '600', style: 'normal' },
+    { path: '../public/fonts/onest-v9-cyrillic_latin-700.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-onest',
+  display: 'swap',
+});
 
 const SITE_URL = 'https://yarche.by';
 
@@ -93,28 +120,13 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={`${onest.variable} ${unbounded.variable}`}>
       <head>
         {/* Inline anti-FOUC paint for dark/light themes — matches the legacy site. */}
         <style>{`html{background:#0A0A0A}body{background:transparent}html[data-theme="light"]{background:#F5F5F0}html[data-theme="light"] body{background:#F5F5F0}`}</style>
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT}
         </Script>
-        <link
-          rel="preload"
-          href="/fonts/unbounded-v12-cyrillic_latin-800.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/onest-v9-cyrillic_latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-        <link rel="stylesheet" href="/fonts.css" />
         <link rel="stylesheet" href="/main.css" />
         <script
           type="application/ld+json"

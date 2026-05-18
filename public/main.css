@@ -83,7 +83,7 @@
 .theme-toggle:hover { border-color: var(--yellow); color: var(--yellow); }
 
 html { scroll-behavior: smooth; font-size: 16px; }
-body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+body { font-family: var(--font-onest), sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
 
 
@@ -102,7 +102,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   display: flex; align-items: center; justify-content: space-between; height: 72px;
 }
 .logo {
-  font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 1.5rem;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 800; font-size: 1.5rem;
   color: var(--yellow); text-decoration: none; letter-spacing: -0.02em;
   cursor: inherit; position: relative;
 }
@@ -124,7 +124,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   background: var(--yellow); color: var(--black); font-weight: 600;
   padding: 10px 24px; border-radius: 10px; font-size: 0.88rem;
   text-decoration: none; transition: all 0.25s; border: none; cursor: inherit;
-  font-family: 'Onest', sans-serif;
+  font-family: var(--font-onest), sans-serif;
 }
 .nav-cta:hover { background: var(--orange); color: var(--text); transform: translateY(-1px); }
 
@@ -179,7 +179,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
 .hero h1 {
-  font-family: 'Unbounded', sans-serif; font-weight: 800;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 800;
   font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 1.05;
   letter-spacing: -0.03em; margin-bottom: 28px; max-width: 900px;
 }
@@ -198,7 +198,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   background: var(--yellow); color: var(--black); font-weight: 600;
   padding: 16px 36px; border-radius: 14px; font-size: 1rem;
   text-decoration: none; transition: all 0.3s; border: none;
-  cursor: inherit; font-family: 'Onest', sans-serif;
+  cursor: inherit; font-family: var(--font-onest), sans-serif;
 }
 .btn-primary:hover { background: var(--orange); color: var(--text); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,107,0,0.3); }
 .btn-secondary {
@@ -207,7 +207,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   padding: 16px 36px; border-radius: 14px; font-size: 1rem;
   text-decoration: none; transition: all 0.3s;
   border: 1px solid var(--border); cursor: inherit;
-  font-family: 'Onest', sans-serif;
+  font-family: var(--font-onest), sans-serif;
 }
 .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
 
@@ -221,7 +221,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   background: var(--bg-input); padding: 32px; text-align: center;
 }
 .stat-num {
-  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 700;
   font-size: 2.2rem; color: var(--yellow); margin-bottom: 6px;
 }
 .stat-label { font-size: 0.85rem; color: var(--text-dim); }
@@ -235,7 +235,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px;
 }
 .section-title {
-  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 700;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15;
   letter-spacing: -0.02em; margin-bottom: 24px; max-width: 700px;
 }
@@ -264,7 +264,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   justify-content: center; font-size: 1.6rem; margin-bottom: 24px;
 }
 .service-card h3 {
-  font-family: 'Unbounded', sans-serif; font-weight: 600;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 600;
   font-size: 1.2rem; margin-bottom: 14px;
 }
 .service-card p { color: var(--text-dim); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; }
@@ -292,12 +292,12 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   text-transform: uppercase; letter-spacing: 0.05em;
 }
 .price-card h4 {
-  font-family: 'Unbounded', sans-serif; font-weight: 600;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 600;
   font-size: 1.1rem; margin-bottom: 8px;
 }
 .price-desc { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 24px; }
 .price-amount {
-  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 700;
   font-size: 2.2rem; margin-bottom: 4px;
 }
 .price-amount span { font-size: 0.85rem; font-weight: 400; color: var(--text-dim); }
@@ -312,7 +312,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 .price-btn {
   width: 100%; padding: 14px; border-radius: 12px; font-weight: 600;
   font-size: 0.92rem; text-align: center; cursor: inherit;
-  transition: all 0.3s; font-family: 'Onest', sans-serif; border: none;
+  transition: all 0.3s; font-family: var(--font-onest), sans-serif; border: none;
 }
 .price-btn-outline {
   background: transparent; color: var(--text);
@@ -359,7 +359,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 .form-group input, .form-group textarea {
   width: 100%; background: var(--bg-input); border: 1px solid var(--border);
   border-radius: var(--radius-sm); padding: 14px 18px; color: var(--text);
-  font-size: 0.95rem; font-family: 'Onest', sans-serif;
+  font-size: 0.95rem; font-family: var(--font-onest), sans-serif;
   transition: border-color 0.2s; outline: none;
 }
 .form-group input:focus, .form-group textarea:focus {
@@ -374,7 +374,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 .custom-select-trigger {
   background: var(--bg-input); border: 1px solid var(--border);
   border-radius: var(--radius-sm); padding: 14px 18px; color: var(--text-dim);
-  font-size: 0.95rem; font-family: 'Onest', sans-serif;
+  font-size: 0.95rem; font-family: var(--font-onest), sans-serif;
   cursor: inherit; display: flex; align-items: center;
   justify-content: space-between; transition: border-color 0.2s;
 }
@@ -415,12 +415,12 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 .form-submit {
   width: 100%; padding: 16px; background: var(--yellow); color: var(--black);
   border: none; border-radius: 14px; font-weight: 700; font-size: 1rem;
-  cursor: inherit; font-family: 'Onest', sans-serif; transition: all 0.3s;
+  cursor: inherit; font-family: var(--font-onest), sans-serif; transition: all 0.3s;
 }
 .form-submit:hover { background: var(--orange); color: var(--text); }
 
 .contact-info h3 {
-  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 700;
   font-size: 1.8rem; margin-bottom: 20px; line-height: 1.2;
 }
 .contact-info p { color: var(--text-muted); line-height: 1.7; margin-bottom: 36px; }
@@ -443,7 +443,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   padding: 140px 40px 60px; max-width: 1340px; margin: 0 auto;
 }
 .inner-hero h1 {
-  font-family: 'Unbounded', sans-serif; font-weight: 800;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 800;
   font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1;
   letter-spacing: -0.02em; margin-bottom: 20px;
 }
@@ -463,7 +463,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 }
 .feature-item:hover { border-color: var(--card-hover-border); }
 .feature-num {
-  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 700;
   font-size: 1.6rem; color: var(--yellow); flex-shrink: 0;
   width: 48px;
 }
@@ -478,7 +478,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   position: relative;
 }
 .step-num {
-  font-family: 'Unbounded', sans-serif; font-weight: 800;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 800;
   font-size: 3rem; color: rgba(255,229,0,0.1); position: absolute;
   top: 16px; right: 24px;
 }
@@ -496,7 +496,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 .footer-brand .logo { display: inline-block; margin-bottom: 16px; }
 .footer-brand p { color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; max-width: 280px; }
 .footer-col h5 {
-  font-family: 'Unbounded', sans-serif; font-weight: 600;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 600;
   font-size: 0.85rem; margin-bottom: 18px; color: var(--text);
 }
 .footer-col a {
@@ -526,7 +526,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 .service-full:hover { border-color: var(--card-hover-border); transform: translateX(4px); }
 .service-full:hover::before { opacity: 1; }
 .service-full-num {
-  font-family: 'Unbounded', sans-serif; font-weight: 800;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 800;
   font-size: 3.5rem; color: rgba(255,229,0,0.08); line-height: 1;
   flex-shrink: 0; width: 80px;
 }
@@ -538,7 +538,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   justify-content: center; font-size: 1.4rem; flex-shrink: 0;
 }
 .service-full-header h3 {
-  font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 1.3rem;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 600; font-size: 1.3rem;
 }
 .service-full-desc {
   color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 20px;
@@ -558,7 +558,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
 }
 .synergy-card:hover { border-color: var(--card-hover-border); }
 .synergy-formula {
-  font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 1.05rem;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 600; font-size: 1.05rem;
   color: var(--yellow); margin-bottom: 12px;
 }
 .synergy-card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.65; }
@@ -581,7 +581,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   border-radius: var(--radius); padding: 48px; margin-top: 48px;
 }
 .article-section h3 {
-  font-family: 'Unbounded', sans-serif; font-weight: 700;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 700;
   font-size: 1.4rem; margin-bottom: 24px; line-height: 1.3;
 }
 .article-section p {
@@ -589,7 +589,7 @@ body { font-family: 'Onest', sans-serif; background: var(--bg); color: var(--tex
   margin-bottom: 18px;
 }
 .article-section h4 {
-  font-family: 'Unbounded', sans-serif; font-weight: 600;
+  font-family: var(--font-unbounded), sans-serif; font-weight: 600;
   font-size: 1.05rem; margin: 32px 0 14px; color: var(--text);
 }
 .article-section blockquote {
@@ -825,7 +825,7 @@ html:not([data-theme="light"]) .post-cta {
   text-align: center;
 }
 .case-cover.placeholder-preview .placeholder-title {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.25;
@@ -841,7 +841,7 @@ html:not([data-theme="light"]) .post-cta {
   background: rgba(255, 229, 0, 0.08);
   border: 1px solid var(--card-hover-border);
   color: var(--text);
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -879,7 +879,7 @@ html:not([data-theme="light"]) .post-cta {
   flex-wrap: wrap;
 }
 .case-detail h1 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: clamp(1.75rem, 2.6vw + 1rem, 2.85rem);
   font-weight: 700;
   line-height: 1.15;
@@ -895,7 +895,7 @@ html:not([data-theme="light"]) .post-cta {
 }
 .case-detail-livelink {
   display: inline-block;
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--yellow);
@@ -922,7 +922,7 @@ html:not([data-theme="light"]) .post-cta {
   padding: 48px;
 }
 .case-detail-cover.placeholder-preview .placeholder-title {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-weight: 700;
   font-size: 2rem;
   color: #fff;
@@ -956,7 +956,7 @@ html:not([data-theme="light"]) .post-cta {
 }
 .case-detail-metrics .case-metric { text-align: left; }
 .case-detail-metrics .case-metric-num {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
   background: linear-gradient(135deg, var(--yellow) 0%, var(--orange) 100%);
@@ -977,7 +977,7 @@ html:not([data-theme="light"]) .post-cta {
   color: var(--text-muted);
 }
 .case-detail-body h2 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--text);
@@ -985,7 +985,7 @@ html:not([data-theme="light"]) .post-cta {
   letter-spacing: -0.01em;
 }
 .case-detail-body h3 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.18rem;
   font-weight: 600;
   color: var(--text);
@@ -1057,7 +1057,7 @@ html:not([data-theme="light"]) .post-cta {
   border-radius: var(--radius);
 }
 .case-detail-cta h3 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 14px;

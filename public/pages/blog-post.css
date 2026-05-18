@@ -32,7 +32,7 @@ html[data-theme="light"] body{background:#F5F5F0}
 .post-category {
   font-size: 0.72rem;
   font-weight: 600;
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   padding: 3px 12px;
   border-radius: 20px;
   background: var(--tag-bg);
@@ -44,7 +44,7 @@ html[data-theme="light"] body{background:#F5F5F0}
 .post-read { font-size: 0.82rem; color: var(--text-dim); }
 
 .post-title {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 700;
   line-height: 1.25;
@@ -71,7 +71,7 @@ html[data-theme="light"] body{background:#F5F5F0}
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: rgba(255,255,255,0.05);
@@ -90,7 +90,7 @@ html[data-theme="light"] body{background:#F5F5F0}
 }
 
 .post-body h2 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--text);
@@ -99,7 +99,7 @@ html[data-theme="light"] body{background:#F5F5F0}
 }
 
 .post-body h3 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
@@ -170,7 +170,7 @@ html[data-theme="light"] body{background:#F5F5F0}
 }
 
 .post-cta h4 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -195,7 +195,7 @@ html[data-theme="light"] body{background:#F5F5F0}
 }
 
 .post-404 h2 {
-  font-family: 'Unbounded', sans-serif;
+  font-family: var(--font-unbounded), sans-serif;
   font-size: 1.5rem;
   margin-bottom: 12px;
   color: var(--text);
