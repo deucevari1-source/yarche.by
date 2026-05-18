@@ -29,7 +29,7 @@
 
 <div class="md-iframe-wrap" style="position:relative; width:100%; aspect-ratio:16/10; margin:24px 0; border-radius:12px; overflow:hidden; background:#0a0a0c;">
   <iframe
-    src="https://containers-web.vercel.app/scene.html?embed=1"
+    src="https://containers-web.vercel.app/scene.html?embed=1&amp;headless=1"
     title="Модуль 51 — 3D-сцена (embed)"
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
