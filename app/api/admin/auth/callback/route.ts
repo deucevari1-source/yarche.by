@@ -57,18 +57,7 @@ export async function GET(req: Request) {
       .split(',')
       .map((s) => s.trim())
       .filter(Boolean);
-    if (!bootstrap.includes(telegramId)) {
-      console.warn(
-        `[admin-auth] not_allowed: telegram_id=${JSON.stringify(telegramId)} ` +
-          `bootstrap=${JSON.stringify(bootstrap)} ` +
-          `claims=${JSON.stringify({
-            sub: claims.sub,
-            name: claims.name,
-            preferred_username: claims.preferred_username,
-          })}`,
-      );
-      return fail(origin, 'not_allowed');
-    }
+    if (!bootstrap.includes(telegramId)) return fail(origin, 'not_allowed');
     const name = (claims.name as string) || (claims.preferred_username as string) || telegramId;
     const username = (claims.preferred_username as string | undefined) ?? null;
     const inserted = await db
