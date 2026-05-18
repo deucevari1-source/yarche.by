@@ -1,0 +1,142 @@
+html[data-theme="light"]{background:#F5F5F0}
+
+html[data-theme="light"] body{background:#F5F5F0}
+
+.price-card.react-card {
+  border-color: transparent;
+  background: #0a0a12;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-card.react-card::before {
+  content: '';
+  position: absolute; inset: -2px; z-index: -1;
+  border-radius: calc(var(--radius) + 2px);
+  background: linear-gradient(135deg, #61DAFB, #FF6B00, #7B2FFF, #00D4FF, #61DAFB);
+  background-size: 300% 300%;
+  animation: reactGradient 3s ease infinite;
+}
+
+.price-card.react-card .react-bg-cover {
+  position: absolute; inset: 2px; z-index: 0;
+  border-radius: calc(var(--radius) - 1px);
+  background: #0a0a12;
+}
+
+.react-particles {
+  position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden;
+}
+
+.react-particles span {
+  position: absolute; width: 3px; height: 3px; border-radius: 50%;
+  animation: floatParticle var(--dur) ease-in-out infinite;
+  opacity: 0;
+}
+
+.react-particles span:nth-child(1) { left:10%;top:80%;--dur:3.1s;animation-delay:0s;background:#61DAFB; }
+
+.react-particles span:nth-child(2) { left:25%;top:90%;--dur:2.8s;animation-delay:0.4s;background:#FF6B00; }
+
+.react-particles span:nth-child(3) { left:40%;top:85%;--dur:3.5s;animation-delay:0.8s;background:#7B2FFF; }
+
+.react-particles span:nth-child(4) { left:55%;top:92%;--dur:2.6s;animation-delay:0.2s;background:#00D4FF; }
+
+.react-particles span:nth-child(5) { left:70%;top:88%;--dur:3.3s;animation-delay:0.6s;background:#61DAFB; }
+
+.react-particles span:nth-child(6) { left:85%;top:82%;--dur:2.9s;animation-delay:1.0s;background:#FF6B00; }
+
+.react-particles span:nth-child(7) { left:15%;top:75%;--dur:3.7s;animation-delay:1.4s;background:#7B2FFF; }
+
+.react-particles span:nth-child(8) { left:60%;top:78%;--dur:3.0s;animation-delay:0.9s;background:#00D4FF; }
+
+@keyframes reactGradient {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 0.9; }
+  80% { opacity: 0.4; }
+  100% { transform: translateY(-150px) scale(0.2); opacity: 0; }
+}
+
+.react-card-inner { position: relative; z-index: 2; }
+
+.react-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(97,218,251,0.12); border: 1px solid rgba(97,218,251,0.3);
+  color: #61DAFB; font-size: 0.7rem; font-weight: 700; padding: 4px 10px;
+  border-radius: 20px; text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.price-card.react-card h4 { color: #fff; }
+
+.price-card.react-card .price-desc { color: rgba(255,255,255,0.55); }
+
+.price-card.react-card .price-amount { color: #fff; }
+
+.price-card.react-card .price-amount span { color: rgba(255,255,255,0.45); }
+
+.price-card.react-card .price-period { color: rgba(255,255,255,0.4); }
+
+.price-card.react-card .price-features li { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.07); }
+
+.price-card.react-card .price-features li::before { color: #61DAFB; }
+
+[data-theme="light"] .price-card.react-card { background: #f0f8ff; }
+
+[data-theme="light"] .price-card.react-card .react-bg-cover { background: #f0f8ff; }
+
+[data-theme="light"] .price-card.react-card h4 { color: #0a0a0a; }
+
+[data-theme="light"] .price-card.react-card .price-desc { color: #555; }
+
+[data-theme="light"] .price-card.react-card .price-amount { color: #0a0a0a; }
+
+[data-theme="light"] .price-card.react-card .price-amount span { color: #777; }
+
+[data-theme="light"] .price-card.react-card .price-period { color: #777; }
+
+[data-theme="light"] .price-card.react-card .price-features li { color: #333; border-color: rgba(0,0,0,0.08); }
+
+[data-theme="light"] .price-card.react-card .price-features li::before { color: #0088aa; }
+
+.react-examples { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; }
+
+.react-examples a {
+  font-size: 0.72rem; color: #61DAFB; border: 1px solid rgba(97,218,251,0.25);
+  background: rgba(97,218,251,0.07); padding: 3px 10px; border-radius: 20px;
+  text-decoration: none; transition: all 0.2s;
+}
+
+.react-examples a:hover { background: rgba(97,218,251,0.18); border-color: #61DAFB; }
+
+.price-btn-react {
+  background: linear-gradient(135deg, #61DAFB 0%, #7B2FFF 100%);
+  color: #fff; font-weight: 700; border: none;
+  box-shadow: 0 0 24px rgba(97,218,251,0.3); transition: all 0.3s;
+}
+
+.price-btn-react:hover { box-shadow: 0 0 44px rgba(97,218,251,0.55); transform: translateY(-2px); }
+
+.price-card.featured-combo {
+  border-color: var(--orange);
+  background: linear-gradient(180deg, rgba(255,107,0,0.09) 0%, var(--dark-card) 100%);
+}
+
+.price-card.featured-combo::after {
+  content: '🔥 Популярный'; position: absolute; top: -1px; right: 24px;
+  background: var(--orange); color: #fff; font-size: 0.72rem;
+  font-weight: 700; padding: 6px 14px; border-radius: 0 0 8px 8px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.price-card.featured-combo .price-features li::before { color: var(--orange); }
+
+.price-btn-orange { background: var(--orange); color: #fff; font-weight: 700; border: none; transition: all 0.3s; }
+
+.price-btn-orange:hover { background: #e05500; transform: translateY(-1px); }

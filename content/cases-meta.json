@@ -1,0 +1,125 @@
+{
+  "$schema": "Manifest of all cases. Order = display order on /cases. `hidden:true` -> under 'Show all'.",
+  "cases": [
+    {
+      "slug": "china-minsk",
+      "md": "china-minsk.md",
+      "title": "Доставка из Китая в Беларусь",
+      "tag": "Промо-сайт",
+      "category": "site",
+      "industry": "Логистика",
+      "year": "2025",
+      "url": "https://china-minsk.by",
+      "preview": { "type": "screenshot", "src": "/images/cases/china-minsk.jpg", "alt": "china-minsk.by — главная страница" },
+      "summary": "25-страничный промо-сайт с 16 городскими лендингами, своей лид-формой и Telegram-уведомлениями менеджерам. Полностью самописная статика без CMS.",
+      "metrics": [
+        { "num": "25", "label": "страниц на сайте" },
+        { "num": "16", "label": "городских лендингов" },
+        { "num": "24", "label": "OG-картинки" }
+      ]
+    },
+    {
+      "slug": "konditsioner-by",
+      "md": "konditsioner-by.md",
+      "title": "Сайт компании по продаже и установке кондиционеров",
+      "tag": "Корпоративный",
+      "category": "site",
+      "industry": "Климатическая техника",
+      "year": "2024",
+      "url": "https://konditsioner.by",
+      "preview": { "type": "screenshot", "src": "/images/cases/konditsioner.jpg", "alt": "konditsioner.by — главная страница" },
+      "summary": "Каталог техники по категориям и брендам, расчёт стоимости монтажа, форма заказа замера. SEO под локальные запросы по Минску.",
+      "metrics": [
+        { "num": "200+", "label": "моделей в каталоге" },
+        { "num": "×3", "label": "больше заявок" },
+        { "num": "SEO", "label": "ТОП по Минску" }
+      ]
+    },
+    {
+      "slug": "modul51",
+      "md": "PORTFOLIO_MODUL51.md",
+      "title": "Модуль 51 — лендинг с интерактивной 3D-сценой",
+      "tag": "Лендинг + 3D",
+      "category": "site",
+      "industry": "Сборные модули, B2B",
+      "year": "2026",
+      "url": "https://containers-web.vercel.app",
+      "preview": { "type": "iframe", "src": "https://containers-web.vercel.app" },
+      "summary": "Лидген-сайт с трёхмерной сценой, которая живёт за контентом всех страниц. WebGL-канвас не размонтируется при навигации — 3D-модель плавно меняется по маршрутам.",
+      "metrics": [
+        { "num": "10", "label": "режимов 3D-сцены" },
+        { "num": "WebGL", "label": "Three.js + Next.js" },
+        { "num": "1", "label": "холст на все страницы" }
+      ]
+    },
+    {
+      "slug": "avtoschool",
+      "md": "rulim.md",
+      "title": "Каталог автошкол и инструкторов Минска",
+      "tag": "Каталог-сервис",
+      "category": "app",
+      "industry": "Образование",
+      "year": "2025",
+      "url": "https://avtoschool.by",
+      "preview": { "type": "placeholder", "gradient": ["#dc2626", "#f59e0b", "#fde047"] },
+      "summary": "Независимая платформа выбора автошколы и инструктора с реальными отзывами, рейтингами, ценами по категориям, интерактивной картой и блогом. 100+ объектов в каталоге.",
+      "metrics": [
+        { "num": "100+", "label": "школ и инструкторов" },
+        { "num": "Leaflet", "label": "интерактивная карта" },
+        { "num": "Next.js 16", "label": "App Router + Prisma" }
+      ]
+    },
+    {
+      "slug": "hair-atelier",
+      "md": "hair-atelier.md",
+      "title": "Hair Atelier — сайт-визитка и CRM салона",
+      "tag": "CRM + сайт",
+      "category": "app",
+      "industry": "Beauty-индустрия",
+      "year": "2026",
+      "url": "",
+      "preview": { "type": "placeholder", "gradient": ["#831843", "#a21caf", "#fbcfe8"] },
+      "summary": "Прямой конкурент YCLIENTS и DIKIDI: онлайн-запись, админ-CRM, Telegram-бот для администраторов, своя система клиентских сообщений и автогенерация повторных записей.",
+      "metrics": [
+        { "num": "3", "label": "сервиса в Docker" },
+        { "num": "Telegram", "label": "бот администратора" },
+        { "num": "petrovich", "label": "склонение ФИО" }
+      ]
+    },
+    {
+      "slug": "ai-vlad",
+      "md": "case-ai-vlad.md",
+      "title": "AI-сотрудник для бизнеса",
+      "tag": "AI-сотрудник",
+      "category": "ai",
+      "industry": "Автоматизация",
+      "year": "2026",
+      "url": "",
+      "preview": { "type": "placeholder", "gradient": ["#064e3b", "#0891b2", "#a5f3fc"] },
+      "summary": "Внедрение AI-агента в рабочие процессы заказчика: обработка лидов, типовая переписка, классификация задач и подготовка ответов. Снижение нагрузки на менеджеров.",
+      "metrics": [
+        { "num": "AI", "label": "автоматизация" },
+        { "num": "×2–3", "label": "быстрее обработка" },
+        { "num": "24/7", "label": "режим работы" }
+      ]
+    },
+    {
+      "slug": "usdt-exchange-bot",
+      "md": "usdt-exchange-bot-case.md",
+      "title": "Telegram-бот для обмена USDT",
+      "tag": "Telegram-бот",
+      "category": "bot",
+      "industry": "Финансы",
+      "year": "2025",
+      "url": "",
+      "preview": { "type": "placeholder", "gradient": ["#0c4a6e", "#0ea5e9", "#bae6fd"] },
+      "summary": "Telegram-бот для P2P-обмена USDT: подбор контрагента, расчёт курса, безопасное сопровождение сделки, поддержка операторов.",
+      "metrics": [
+        { "num": "P2P", "label": "обмен USDT" },
+        { "num": "24/7", "label": "приём заявок" },
+        { "num": "Telegram", "label": "вся коммуникация" }
+      ],
+      "hidden": true
+    }
+  ]
+}

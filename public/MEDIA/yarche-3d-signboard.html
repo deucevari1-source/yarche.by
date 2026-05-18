@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>YARCHE — 3D signboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/unbounded@5.1.1/800.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #0a0a0c; height: 100%; }
+  #yarche-3d {
+    width: 100%;
+    max-width: 720px;
+    height: 380px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0a0a0c;
+  }
+  #yarche-3d canvas { display: block; }
+  .preload-font {
+    position: absolute; visibility: hidden; pointer-events: none;
+    font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 1px;
+  }
+</style>
+</head>
+<body>
+
+<div id="yarche-3d">
+  <span class="preload-font">YARCHE</span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(async function () {
+  try {
+    await document.fonts.load("800 240px Unbounded");
+    await document.fonts.ready;
+  } catch (e) {}
+
+  const mount = document.getElementById('yarche-3d');
+  let W = mount.clientWidth, H = mount.clientHeight;
+
+  // ---------- Scene ----------
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0a0a0c);
+
+  const camera = new THREE.PerspectiveCamera(32, W / H, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(W, H);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  mount.appendChild(renderer.domElement);
+
+  // ---------- Text texture ----------
+  const tw = 2048, th = 512;
+  const cnv = document.createElement('canvas');
+  cnv.width = tw; cnv.height = th;
+  const ctx = cnv.getContext('2d');
+
+  const grad = ctx.createLinearGradient(0, 0, 0, th);
+  grad.addColorStop(0, '#22222a');
+  grad.addColorStop(1, '#0e0e12');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, tw, th);
+
+  ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(6, 6, tw - 12, th - 12);
+
+  ctx.font = '800 240px Unbounded, "Arial Black", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  try { ctx.letterSpacing = '-3px'; } catch (e) {}
+
+  ctx.shadowColor = 'rgba(255, 229, 0, 0.55)';
+  ctx.shadowBlur = 55;
+  ctx.fillStyle = '#FFE500';
+  ctx.fillText('YARCHE', 900, 260);
+  ctx.shadowBlur = 0;
+  ctx.fillText('YARCHE', 900, 260);
+
+  function drawScrew(x, y) {
+    const g = ctx.createRadialGradient(x - 5, y - 5, 2, x, y, 18);
+    g.addColorStop(0, '#9a9a9a');
+    g.addColorStop(1, '#1a1a1a');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(x, y, 18, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = '#080808'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x - 10, y); ctx.lineTo(x + 10, y); ctx.stroke();
+  }
+  [[60, 60], [tw - 60, 60], [60, th - 60], [tw - 60, th - 60]]
+    .forEach(p => drawScrew(p[0], p[1]));
+
+  const tex = new THREE.CanvasTexture(cnv);
+  tex.anisotropy = 8;
+
+  // ---------- Sign group (static tilt) ----------
+  const group = new THREE.Group();
+  group.rotation.y = -0.22;
+  group.rotation.x = 0.05;
+  scene.add(group);
+
+  const plateGeom = new THREE.BoxGeometry(4.2, 1.05, 0.18);
+  const sideMat  = new THREE.MeshStandardMaterial({ color: 0x111114, metalness: 0.75, roughness: 0.45 });
+  const frontMat = new THREE.MeshStandardMaterial({ map: tex, metalness: 0.25, roughness: 0.55 });
+  const plate = new THREE.Mesh(plateGeom, [sideMat, sideMat, sideMat, sideMat, frontMat, sideMat]);
+  group.add(plate);
+
+  const frame = new THREE.Mesh(
+    new THREE.BoxGeometry(4.0, 0.88, 0.02),
+    new THREE.MeshStandardMaterial({
+      color: 0x000000, metalness: 0.4, roughness: 0.7, transparent: true, opacity: 0.35
+    })
+  );
+  frame.position.z = 0.091;
+  group.add(frame);
+
+  // LED
+  const ledX = 1.45, ledY = 0.30, ledZ = 0.11;
+
+  const ledMat = new THREE.MeshBasicMaterial({ color: 0xFF8030 });
+  const led = new THREE.Mesh(new THREE.SphereGeometry(0.055, 32, 32), ledMat);
+  led.position.set(ledX, ledY, ledZ);
+  group.add(led);
+
+  const hc = document.createElement('canvas');
+  hc.width = hc.height = 128;
+  const hctx = hc.getContext('2d');
+  const hg = hctx.createRadialGradient(64, 64, 0, 64, 64, 64);
+  hg.addColorStop(0,    'rgba(255,150,40,0.95)');
+  hg.addColorStop(0.45, 'rgba(255,107,0,0.4)');
+  hg.addColorStop(1,    'rgba(255,107,0,0)');
+  hctx.fillStyle = hg;
+  hctx.fillRect(0, 0, 128, 128);
+
+  const haloTex = new THREE.CanvasTexture(hc);
+  const haloMat = new THREE.SpriteMaterial({
+    map: haloTex, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+  });
+  const halo = new THREE.Sprite(haloMat);
+  halo.scale.set(0.5, 0.5, 1);
+  halo.position.set(ledX, ledY, ledZ + 0.02);
+  group.add(halo);
+
+  const ledLight = new THREE.PointLight(0xFF6B00, 0.7, 1.8);
+  ledLight.position.set(ledX, ledY, ledZ + 0.35);
+  group.add(ledLight);
+
+  // ---------- Lighting ----------
+  scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+
+  const key  = new THREE.DirectionalLight(0xffffff, 0.9);
+  key.position.set(3, 4, 5);  scene.add(key);
+
+  const fill = new THREE.DirectionalLight(0xFFE066, 0.25);
+  fill.position.set(-4, -1, 3); scene.add(fill);
+
+  const rim  = new THREE.DirectionalLight(0x4477ff, 0.15);
+  rim.position.set(0, 0, -3); scene.add(rim);
+
+  // ---------- Loop: only LED blinks ----------
+  let t = 0, lastBlink = 0, blinkOn = true;
+  function animate() {
+    t += 0.016;
+    if (t - lastBlink > 0.6) { blinkOn = !blinkOn; lastBlink = t; }
+    if (blinkOn) {
+      ledMat.color.setHex(0xFF8030);
+      haloMat.opacity = 1;
+      ledLight.intensity = 0.7;
+    } else {
+      ledMat.color.setHex(0x331100);
+      haloMat.opacity = 0;
+      ledLight.intensity = 0;
+    }
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // ---------- Resize ----------
+  window.addEventListener('resize', () => {
+    W = mount.clientWidth;
+    H = mount.clientHeight;
+    camera.aspect = W / H;
+    camera.updateProjectionMatrix();
+    renderer.setSize(W, H);
+  });
+})();
+</script>
+
+</body>
+</html>

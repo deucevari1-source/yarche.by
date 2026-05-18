@@ -1,0 +1,13 @@
+html[data-theme="light"]{background:#F5F5F0}
+
+html[data-theme="light"] body{background:#F5F5F0}
+
+@media (max-width: 768px) {
+.mobile-hide { display: none !important; }
+
+.mobile-show { display: block !important; }
+}
+
+@media (min-width: 769px) {
+.mobile-show { display: none !important; }
+}
