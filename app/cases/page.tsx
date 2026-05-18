@@ -72,7 +72,7 @@ const BODY = `<section class="inner-hero">
       </a>
 
       <!-- 2. AVTOSCHOOL — screenshot (desktop + mobile via <picture>) -->
-      <a class="case-card animate delay-1" data-category="app" href="/cases/avtoschool">
+      <a class="case-card animate delay-1" data-category="site app" href="/cases/avtoschool">
         <div class="case-cover scroll-preview">
           <picture>
             <source media="(max-width: 768px)" srcset="/images/cases/avtoschool-mobile.jpg">
@@ -171,7 +171,7 @@ const BODY = `<section class="inner-hero">
       </a>
 
       <!-- 5. HAIR ATELIER — placeholder -->
-      <a class="case-card animate" data-category="app" href="/cases/hair-atelier">
+      <a class="case-card animate" data-category="site app" href="/cases/hair-atelier">
         <div class="case-cover placeholder-preview" style="background:linear-gradient(135deg,#831843,#a21caf,#fbcfe8)">
           <div class="placeholder-title">Hair Atelier</div>
         </div>

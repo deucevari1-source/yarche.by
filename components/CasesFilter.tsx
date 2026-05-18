@@ -35,9 +35,9 @@ export function CasesFilter() {
     function apply() {
       let visible = 0;
       for (const c of cards) {
-        const cat = c.dataset.category || '';
+        const cats = (c.dataset.category || '').split(/\s+/).filter(Boolean);
         const isExtra = c.classList.contains('is-extra');
-        const matches = currentFilter === 'all' || cat === currentFilter;
+        const matches = currentFilter === 'all' || cats.includes(currentFilter);
         const shouldShow =
           matches && (currentFilter !== 'all' || !isExtra || showAll);
         c.classList.toggle('is-hidden', !shouldShow);
