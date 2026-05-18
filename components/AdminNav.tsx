@@ -12,7 +12,7 @@ const LINKS = [
 ];
 
 const SECONDARY = [
-  { href: '/admin/content', label: 'Контент' },
+  { href: '/admin/startups', label: 'Стартапы' },
   { href: '/admin/admins', label: 'Админы' },
 ];
 
