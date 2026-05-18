@@ -14,11 +14,15 @@ export function getOidcConfig(): Promise<oidc.Configuration> {
   return cached;
 }
 
-export function getRedirectUri(req?: Request): string {
-  if (process.env.TELEGRAM_REDIRECT_URI) return process.env.TELEGRAM_REDIRECT_URI;
-  if (req) {
-    const url = new URL(req.url);
-    return `${url.origin}/api/admin/auth/callback`;
-  }
-  throw new Error('TELEGRAM_REDIRECT_URI not set and no request to derive from');
+export function getRedirectUri(): string {
+  const uri = process.env.TELEGRAM_REDIRECT_URI;
+  if (!uri) throw new Error('TELEGRAM_REDIRECT_URI is not set');
+  return uri;
+}
+
+// Behind nginx, req.url's host is the upstream bind (localhost:3000), not the
+// public origin. Derive the public origin once from TELEGRAM_REDIRECT_URI and
+// use it for every absolute URL we construct (redirects, OIDC currentUrl).
+export function getSiteOrigin(): string {
+  return new URL(getRedirectUri()).origin;
 }

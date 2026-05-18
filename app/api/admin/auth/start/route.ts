@@ -6,14 +6,14 @@ import { getOidcConfig, getRedirectUri } from '@/lib/auth/oidc';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-export async function GET(req: Request) {
+export async function GET() {
   const config = await getOidcConfig();
   const verifier = oidc.randomPKCECodeVerifier();
   const challenge = await oidc.calculatePKCECodeChallenge(verifier);
   const state = oidc.randomState();
 
   const url = oidc.buildAuthorizationUrl(config, {
-    redirect_uri: getRedirectUri(req),
+    redirect_uri: getRedirectUri(),
     scope: 'openid profile',
     code_challenge: challenge,
     code_challenge_method: 'S256',
