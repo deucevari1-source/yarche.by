@@ -24,6 +24,7 @@ const MOBILE_LINKS = [
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const isAdmin = pathname.startsWith('/admin');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [themeIcon, setThemeIcon] = useState('🌙');
 
@@ -47,6 +48,8 @@ export function SiteHeader() {
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
+
+  if (isAdmin) return null;
 
   return (
     <>
