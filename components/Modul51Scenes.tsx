@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react';
 
 // scene.html doesn't read a `mode` URL param — only `embed` and `headless`.
-// To get a non-default mode you have to postMessage('setMode', ...) once the
-// iframe is loaded. We wait until the iframe's load event (DOM ready) and
-// then send after a short tick so scene.html's message listener is wired up.
+// It exposes a postMessage protocol and announces readiness by sending
+// `{ type: 'sceneReady' }` to its parent once Three.js + models are mounted.
+// We listen for that and reply with `setMode` for non-default modes.
 const SCENES: Array<{ mode: string; label: string }> = [
   { mode: 'container', label: 'Контейнер' },
   { mode: 'kpp', label: 'КПП' },
@@ -18,24 +18,21 @@ export function Modul51Scenes() {
   const refs = useRef<Array<HTMLIFrameElement | null>>([]);
 
   useEffect(() => {
-    const timers: number[] = [];
-    refs.current.forEach((iframe, i) => {
-      if (!iframe) return;
-      const mode = SCENES[i].mode;
-      // 'container' is scene.html's default — no message needed.
-      if (mode === 'container') return;
-      const send = () => {
-        const t = window.setTimeout(() => {
-          iframe.contentWindow?.postMessage({ type: 'setMode', mode }, '*');
-        }, 600);
-        timers.push(t);
-      };
-      if (iframe.contentDocument?.readyState === 'complete') send();
-      else iframe.addEventListener('load', send, { once: true });
-    });
-    return () => {
-      for (const t of timers) window.clearTimeout(t);
-    };
+    function onMessage(e: MessageEvent) {
+      if (!e.data || e.data.type !== 'sceneReady') return;
+      const idx = refs.current.findIndex(
+        (f) => f != null && f.contentWindow === e.source,
+      );
+      if (idx === -1) return;
+      const mode = SCENES[idx].mode;
+      if (mode === 'container') return; // scene.html defaults to container
+      (e.source as Window | null)?.postMessage(
+        { type: 'setMode', mode },
+        '*',
+      );
+    }
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
   }, []);
 
   return (
