@@ -8,6 +8,7 @@ import {
   renderCaseBody,
   type CaseMeta,
 } from '@/lib/cases';
+import { Modul51Scenes } from '@/components/Modul51Scenes';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -123,6 +124,8 @@ export default async function CasePage({ params }: PageProps) {
             className="case-detail-body"
             dangerouslySetInnerHTML={{ __html: body }}
           />
+
+          {slug === 'modul51' && <Modul51Scenes />}
 
           <section className="case-detail-cta">
             <h3>Хотите похожий проект?</h3>

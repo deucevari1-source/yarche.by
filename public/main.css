@@ -947,6 +947,56 @@ html:not([data-theme="light"]) .post-cta {
 .case-detail-cover:has(> img) {
   aspect-ratio: auto;
 }
+
+/* === Modul51 multi-scene block (rendered by components/Modul51Scenes.tsx) === */
+.modul51-scenes {
+  margin: 56px 0 8px;
+}
+.modul51-scenes > h2 {
+  font-family: var(--font-unbounded), sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+.modul51-scenes > p {
+  font-family: var(--font-onest), sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary, var(--text));
+  opacity: 0.85;
+  margin: 0 0 24px;
+}
+.modul51-scene-block {
+  margin: 0 0 28px;
+}
+.modul51-scene-block figcaption {
+  font-family: var(--font-unbounded), sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange, #ff6b00);
+  margin: 0 0 10px;
+}
+/* Shared wrapper used by markdown iframes and the modul51 component. */
+.md-iframe-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0ece4;
+  border: 1px solid var(--border);
+}
+.md-iframe-wrap > iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .case-detail-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
