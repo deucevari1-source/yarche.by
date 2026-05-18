@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate">SEO-продвижение</div>
-    <h1 class="animate delay-1">Выведем ваш сайт в <span class="highlight">ТОП</span> поиска</h1>
+    <h1 class="delay-1">Выведем ваш сайт в <span class="highlight">ТОП</span> поиска</h1>
     <p class="animate delay-2">Комплексное SEO-продвижение в Google и Яндекс для бизнеса в Минске и по всей Беларуси. Не просто позиции в выдаче — а реальные заявки и клиенты из органического поиска.</p>
   </section>
 

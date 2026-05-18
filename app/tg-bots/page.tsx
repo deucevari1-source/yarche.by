@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate">Telegram-боты</div>
-    <h1 class="animate delay-1">Боты, которые <span class="highlight">продают</span></h1>
+    <h1 class="delay-1">Боты, которые <span class="highlight">продают</span></h1>
     <p class="animate delay-2">Разрабатываем Telegram-ботов любой сложности — от уведомлений до полноценных магазинов с каталогом, оплатой через ЕРИП и AI-ассистентом. Клиент покупает, не выходя из чата.</p>
   </section>
 

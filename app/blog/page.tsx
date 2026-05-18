@@ -37,7 +37,7 @@ export default function BlogPage() {
       <main>
         <section className="inner-hero">
           <div className="hero-badge animate">Экспертные материалы</div>
-          <h1 className="animate delay-1">
+          <h1 className="delay-1">
             Блог <span className="highlight">ЯРЧЕ</span>
           </h1>
           <p className="animate delay-2">

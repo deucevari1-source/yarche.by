@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate">Полный спектр digital-услуг</div>
-    <h1 class="animate delay-1">Всё для <span class="highlight">роста</span> вашего бизнеса</h1>
+    <h1 class="delay-1">Всё для <span class="highlight">роста</span> вашего бизнеса</h1>
     <p class="animate delay-2">Мы объединяем пять ключевых направлений digital-маркетинга в единую экосистему. Каждая услуга усиливает остальные — вместе они дают кратный результат.</p>
   </section>
 

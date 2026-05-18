@@ -32,7 +32,7 @@ export default function HomePage() {
         <section className="hero">
           <div className="hero-inner">
             <div className="hero-badge animate">Минск и вся Беларусь</div>
-            <h1 className="animate delay-1">
+            <h1 className="delay-1">
               Делаем ваш бизнес <span className="highlight">ярче</span> в digital
             </h1>
             <p className="animate delay-2">

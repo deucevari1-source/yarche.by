@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate" style="background:rgba(255,107,0,0.15); border-color:rgba(255,107,0,0.3); color:var(--orange);">🔥 HOT — Создание сайтов</div>
-    <h1 class="animate delay-1">Сайты, которые <span class="highlight">конвертируют</span></h1>
+    <h1 class="delay-1">Сайты, которые <span class="highlight">конвертируют</span></h1>
     <p class="animate delay-2">Проектируем и разрабатываем веб-решения, которые не просто красиво выглядят, а приносят деньги. От лендинга до сложного e-commerce — с фокусом на UX, скорость и конверсию.</p>
   </section>
 

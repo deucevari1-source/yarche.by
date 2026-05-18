@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const BODY = `<!-- HERO with special highlight -->
 <section class="inner-hero" style="padding-bottom:40px;">
     <div class="hero-badge animate" style="background:rgba(255,107,0,0.15); border-color:rgba(255,107,0,0.3); color:var(--orange);">🔥 HOT — AI-сотрудник</div>
-    <h1 class="animate delay-1">AI-сотрудник<br>на базе <span class="highlight">OpenClaw</span></h1>
+    <h1 class="delay-1">AI-сотрудник<br>на базе <span class="highlight">OpenClaw</span></h1>
     <p class="animate delay-2 mobile-hide">Не чат-бот. Не ассистент. Полноценный виртуальный работник, который думает, действует и решает задачи — как живой член команды. Только без больничных, отпусков и выгорания.</p>
     <p class="animate delay-2 mobile-show">Виртуальный работник 24/7 — без больничных и выгорания.</p>
 </section>
