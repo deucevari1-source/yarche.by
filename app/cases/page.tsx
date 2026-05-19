@@ -235,7 +235,7 @@ const BODY = `<section class="inner-hero">
       </a>
 
       <!-- 7. USDT-BOT — hidden until "Смотреть все" (keeps the default fold at 6) -->
-      <a class="case-card animate is-extra" data-category="bot" href="/cases/usdt-exchange-bot">
+      <a class="case-card animate is-extra is-hidden" data-category="bot" href="/cases/usdt-exchange-bot">
         <div class="case-cover placeholder-preview" style="background:linear-gradient(135deg,#0c4a6e,#0ea5e9,#bae6fd)">
           <div class="placeholder-title">USDT Exchange Bot</div>
         </div>

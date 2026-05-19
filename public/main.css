@@ -833,8 +833,7 @@ html:not([data-theme="light"]) .post-cta {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.01em;
 }
-.case-card.is-extra { display: none; }
-.case-card.is-extra.is-revealed { display: flex; }
+.case-card.is-hidden { display: none; }
 .cases-show-all {
   margin: 40px auto 0;
   display: block;
@@ -851,7 +850,7 @@ html:not([data-theme="light"]) .post-cta {
   transition: background 0.2s, transform 0.15s;
 }
 .cases-show-all:hover { background: rgba(255, 229, 0, 0.16); transform: translateY(-1px); }
-.cases-show-all[aria-expanded="true"] { display: none; }
+.cases-show-all[hidden] { display: none; }
 
 /* ===================================================================
    Case detail page (/cases/{slug}.html)
