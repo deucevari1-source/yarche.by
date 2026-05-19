@@ -11,7 +11,7 @@
     s.dataset.lead = 'https://bot.yarche.by:5050/api/lead';
     s.dataset.name = 'ai-Влад';
     s.dataset.color = '#FF6B00';
-    s.dataset.greeting = 'Здравуствуйте, чем могу помочь? Что подсказать?';
+    s.dataset.greeting = 'Добрый день! Я AI-ассистент агентства ЯРЧЕ. Спросите про услуги, цены или оставьте заявку — передам менеджеру.';
     document.body.appendChild(s);
   }
 
