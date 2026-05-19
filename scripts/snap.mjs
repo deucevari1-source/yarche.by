@@ -12,6 +12,13 @@ const TARGETS = [
   { url: 'https://avtoschool.by', slug: 'avtoschool', waitMs: 2500 },
 ];
 
+// Full-page tall screenshots used by .scroll-preview (image translates up
+// on hover to reveal the rest of the page). The top of the image must
+// include the site header — scroll to top before capture.
+const FULL_PAGE_TARGETS = [
+  { url: 'https://china-minsk.by', slug: 'china-minsk', waitMs: 2500 },
+];
+
 await mkdir(OUT_DIR, { recursive: true });
 
 const browser = await chromium.launch();
@@ -44,6 +51,21 @@ for (const t of TARGETS) {
     { x: 0, y: 0, width: 1440, height: 900 }, t.waitMs);
   await snap(mobile, t.url, `${t.slug}-mobile.jpg`,
     { x: 0, y: 0, width: 390, height: 800 }, t.waitMs);
+}
+
+for (const t of FULL_PAGE_TARGETS) {
+  console.log(`[${t.slug}] full page`);
+  const page = await desktop.newPage();
+  await page.goto(t.url, { waitUntil: 'networkidle', timeout: 30_000 }).catch(() => {});
+  await page.waitForTimeout(t.waitMs);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({
+    path: resolve(OUT_DIR, `${t.slug}.jpg`),
+    type: 'jpeg',
+    quality: 85,
+    fullPage: true,
+  });
+  await page.close();
 }
 
 await browser.close();
