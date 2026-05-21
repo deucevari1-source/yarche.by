@@ -4,16 +4,33 @@ main[data-page="team"] {
   margin: 0 auto;
 }
 
-.team-hero-inner {
+.team-badge {
+  margin-bottom: 28px;
+}
+
+.team-hero-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: 48px;
+  grid-template-areas:
+    "photo header"
+    "photo info";
+  gap: 0 48px;
   align-items: start;
 }
 
 .team-photo-wrap {
+  grid-area: photo;
   position: sticky;
   top: 120px;
+}
+
+.team-header {
+  grid-area: header;
+  margin-bottom: 24px;
+}
+
+.team-info {
+  grid-area: info;
 }
 
 .team-photo {
@@ -38,8 +55,8 @@ main[data-page="team"] {
   background: linear-gradient(135deg, rgba(255, 229, 0, 0.06), rgba(255, 107, 0, 0.04));
 }
 
-.team-info h1 {
-  margin: 12px 0 4px;
+.team-header h1 {
+  margin: 0 0 6px;
   font-family: var(--font-unbounded), sans-serif;
   font-weight: 700;
 }
@@ -47,7 +64,7 @@ main[data-page="team"] {
 .team-role {
   font-size: 1.05rem;
   color: var(--text-muted, #8a91a0);
-  margin: 0 0 24px;
+  margin: 0;
   font-family: var(--font-onest), sans-serif;
 }
 
@@ -141,38 +158,46 @@ main[data-page="team"] {
   main[data-page="team"] {
     padding: 100px 16px 80px;
   }
-  .team-hero-inner {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .team-badge {
+    font-size: 0.72rem;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+  .team-hero-grid {
+    grid-template-columns: 88px 1fr;
+    grid-template-areas:
+      "photo header"
+      "info  info";
+    gap: 16px 16px;
+    align-items: center;
   }
   .team-photo-wrap {
     position: static;
-    width: 160px;
-    max-width: 160px;
-    margin: 0 auto;
   }
   .team-photo,
   .team-photo-placeholder {
     border-radius: 50%;
+    width: 88px;
+    height: 88px;
   }
   .team-photo-placeholder {
-    font-size: 3rem;
+    font-size: 1.8rem;
+  }
+  .team-header {
+    margin-bottom: 0;
+  }
+  .team-header h1 {
+    font-size: 1.4rem;
+    line-height: 1.15;
+  }
+  .team-role {
+    font-size: 0.85rem;
   }
   .team-info {
-    text-align: center;
-  }
-  .team-info h1 {
-    font-size: 1.6rem;
-  }
-  .team-bio {
-    text-align: left;
+    margin-top: 8px;
   }
   .team-meta {
-    text-align: left;
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-  .team-contacts-list {
-    justify-content: center;
   }
 }

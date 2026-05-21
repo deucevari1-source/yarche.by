@@ -68,7 +68,8 @@ export default async function TeamMemberPage({
       <link rel="stylesheet" href="/pages/team.css" />
       <main data-page="team">
         <section className="team-hero">
-          <div className="team-hero-inner">
+          <div className="hero-badge team-badge">Команда</div>
+          <div className="team-hero-grid">
             <div className="team-photo-wrap">
               {photoExists(m.photo) ? (
                 <Image
@@ -85,11 +86,11 @@ export default async function TeamMemberPage({
                 </div>
               )}
             </div>
-            <div className="team-info">
-              <div className="hero-badge">Команда</div>
+            <div className="team-header">
               <h1>{m.name}</h1>
               <div className="team-role">{m.role}</div>
-
+            </div>
+            <div className="team-info">
               {m.bio.map((p, i) => (
                 <p key={i} className="team-bio">
                   {p}
