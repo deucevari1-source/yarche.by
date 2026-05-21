@@ -505,7 +505,7 @@ body { font-family: var(--font-onest), sans-serif; background: var(--bg); color:
 }
 .footer-col a:hover { color: var(--yellow); }
 .footer-col a.footer-contact {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 8px;
 }
 .footer-col a.footer-contact svg { flex: none; opacity: 0.85; }
 .footer-bottom {
