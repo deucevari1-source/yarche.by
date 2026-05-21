@@ -1,5 +1,5 @@
 main[data-page="team"] {
-  padding: 80px 24px 120px;
+  padding: 140px 40px 120px;
   max-width: 1080px;
   margin: 0 auto;
 }
@@ -139,7 +139,7 @@ main[data-page="team"] {
 
 @media (max-width: 760px) {
   main[data-page="team"] {
-    padding: 56px 16px 80px;
+    padding: 100px 16px 80px;
   }
   .team-hero-inner {
     grid-template-columns: 1fr;
