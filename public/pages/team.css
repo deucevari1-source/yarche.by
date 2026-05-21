@@ -143,14 +143,36 @@ main[data-page="team"] {
   }
   .team-hero-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 20px;
   }
   .team-photo-wrap {
     position: static;
-    max-width: 280px;
+    width: 160px;
+    max-width: 160px;
+    margin: 0 auto;
+  }
+  .team-photo,
+  .team-photo-placeholder {
+    border-radius: 50%;
+  }
+  .team-photo-placeholder {
+    font-size: 3rem;
+  }
+  .team-info {
+    text-align: center;
+  }
+  .team-info h1 {
+    font-size: 1.6rem;
+  }
+  .team-bio {
+    text-align: left;
   }
   .team-meta {
+    text-align: left;
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  .team-contacts-list {
+    justify-content: center;
   }
 }
