@@ -39,6 +39,14 @@ export async function generateMetadata({
   return {
     title: `${m.name} — ${m.role}`,
     description: desc,
+    // Profile pages should not appear in search results — they're for
+    // direct sharing/linking only. Names still show on service pages
+    // (expert-badge), which remain indexable.
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: { index: false, follow: true },
+    },
     alternates: { canonical: `/team/${m.slug}` },
     openGraph: {
       title: `${m.name} — ${m.role}`,
