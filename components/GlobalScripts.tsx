@@ -1,10 +1,19 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { installTracker, track } from '@/lib/analytics/client';
 
 const API_URL = 'https://bot.yarche.by:5050/api/lead';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    ym?: (id: number, action: string, ...args: unknown[]) => void;
+  }
+}
+
+const YM_ID = 109348823;
 
 const HOVER_SELECTOR =
   'a,button,.service-card,.service-full,.price-card,.review-card,.feature-item,.synergy-card,.step-card';
@@ -40,6 +49,20 @@ export function GlobalScripts() {
   // Pageview on initial load and every SPA navigation.
   useEffect(() => {
     track('pageview', { title: document.title || undefined });
+  }, [pathname]);
+
+  // Notify gtag + Metrika on SPA navigation. Their own loader fires the
+  // first pageview automatically, so skip it here.
+  const isFirstNav = useRef(true);
+  useEffect(() => {
+    if (isFirstNav.current) {
+      isFirstNav.current = false;
+      return;
+    }
+    if (pathname.startsWith('/admin')) return;
+    const url = pathname + window.location.search;
+    window.gtag?.('event', 'page_view', { page_path: url, page_title: document.title });
+    window.ym?.(YM_ID, 'hit', window.location.origin + url, { title: document.title });
   }, [pathname]);
 
   // Custom-select dropdown + div[href] click navigation — document delegation

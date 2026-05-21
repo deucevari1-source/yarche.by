@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
 import { GlobalScripts } from '@/components/GlobalScripts';
+import { AnalyticsScripts, AnalyticsNoscript } from '@/components/Analytics';
 import './globals.css';
 
 // next/font/local: emits @font-face inline, auto-preloads, generates
@@ -140,8 +141,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD_SITE) }}
         />
+        <AnalyticsScripts />
       </head>
       <body>
+        <AnalyticsNoscript />
         <div className="cursor" id="cursor"></div>
         <div className="cursor-trail" id="trail"></div>
         <SiteHeader />
