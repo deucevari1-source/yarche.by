@@ -1,0 +1,31 @@
+{
+  "$schema": "Team members manifest. Order = display order on /team. Used by /team/[slug] dynamic route + expert-badge link target.",
+  "members": [
+    {
+      "slug": "vlad",
+      "name": "Владислав Васильченко",
+      "name_en": "Vladislav Vasilchenko",
+      "role": "Основатель yarche.by",
+      "role_en": "Founder, yarche.by",
+      "photo": "/team/vlad.jpg",
+      "bio": [
+        "Веду продукт от идеи до запуска: стратегия, дизайн, разработка, продажи и работа с клиентами. В коммерческой разработке с 2015 года; опыт в управлении и продажах позволяет смотреть на задачи через призму бизнеса, а не только кода.",
+        "Создаю яркие и смелые цифровые решения — там, где сильный дизайн встречается с пониманием бизнеса изнутри."
+      ],
+      "bio_en": [
+        "I lead products end-to-end — strategy, design, development, sales, and client work. In commercial software development since 2015, with hands-on experience in management and sales that lets me approach every project through a business lens, not just a technical one.",
+        "I build bold, distinctive digital products where strong design meets a deep understanding of how business actually works."
+      ],
+      "focus": ["Разработка", "Дизайн", "Стратегия и управление", "Продажи"],
+      "focus_en": ["Development", "Design", "Strategy & Management", "Sales"],
+      "education": "МИУ (Минск), SAN (Варшава)",
+      "education_en": "MIU (Minsk), SAN (Warsaw)",
+      "contacts": {
+        "email": "vlad.vslchnk@gmail.com",
+        "instagram": "vld.kk",
+        "linkedin": null,
+        "telegram": null
+      }
+    }
+  ]
+}
