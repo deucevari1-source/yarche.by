@@ -1,6 +1,7 @@
 import Script from 'next/script';
 
-const GA_ID = 'G-6KKM6GXZ8S';
+// GA is loaded via GTM (Тег Google in tagmanager.google.com) — do NOT add
+// gtag/js + gtag('config', ...) here, that double-counts pageviews.
 const GTM_ID = 'GTM-KX792XXM';
 const METRIKA_ID = 109348823;
 
@@ -17,23 +18,6 @@ export function AnalyticsScripts() {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${GTM_ID}');
-          `,
-        }}
-      />
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}');
           `,
         }}
       />
