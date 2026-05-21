@@ -504,6 +504,10 @@ body { font-family: var(--font-onest), sans-serif; background: var(--bg); color:
   text-decoration: none; margin-bottom: 10px; transition: color 0.2s;
 }
 .footer-col a:hover { color: var(--yellow); }
+.footer-col a.footer-contact {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.footer-col a.footer-contact svg { flex: none; opacity: 0.85; }
 .footer-bottom {
   max-width: 1340px; margin: 40px auto 0; padding-top: 24px;
   border-top: 1px solid var(--footer-line);

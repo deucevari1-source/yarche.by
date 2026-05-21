@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Icon } from '@/components/Icon';
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -28,10 +29,19 @@ export function SiteFooter() {
         </div>
         <div className="footer-col">
           <h5>Контакты</h5>
-          <a href="tel:+375292460054">+375 (29) 246-00-54</a>
-          <a href="mailto:b2b@yarche.by">b2b@yarche.by</a>
-          <a href="https://t.me/yarche_by" target="_blank" rel="noopener">
-            Telegram
+          <a href="tel:+375292460054" className="footer-contact">
+            <Icon name="phone" /> +375 (29) 246-00-54
+          </a>
+          <a href="mailto:b2b@yarche.by" className="footer-contact">
+            <Icon name="mail" /> b2b@yarche.by
+          </a>
+          <a
+            href="https://t.me/yarche_by"
+            target="_blank"
+            rel="noopener"
+            className="footer-contact"
+          >
+            <Icon name="telegram" /> Telegram
           </a>
         </div>
         <div className="footer-col">

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAllTeam, getTeamMember } from '@/lib/team';
+import { Icon } from '@/components/Icon';
 
 function photoExists(photoPath: string): boolean {
   // photoPath is web-rooted, e.g. /team/vlad.jpg → public/team/vlad.jpg
@@ -113,8 +114,9 @@ export default async function TeamMemberPage({
                   <div className="team-meta-label">Контакты</div>
                   <div className="team-contacts-list">
                     {email && (
-                      <a href={`mailto:${email}`} className="team-contact">
-                        ✉️ {email}
+                      <a href={`mailto:${email}`} className="team-contact" aria-label="Email">
+                        <Icon name="mail" />
+                        <span>{email}</span>
                       </a>
                     )}
                     {tg && (
@@ -123,13 +125,22 @@ export default async function TeamMemberPage({
                         target="_blank"
                         rel="noopener"
                         className="team-contact"
+                        aria-label="Telegram"
                       >
-                        💬 Telegram
+                        <Icon name="telegram" />
+                        <span>Telegram</span>
                       </a>
                     )}
                     {li && (
-                      <a href={li} target="_blank" rel="noopener" className="team-contact">
-                        🔗 LinkedIn
+                      <a
+                        href={li}
+                        target="_blank"
+                        rel="noopener"
+                        className="team-contact"
+                        aria-label="LinkedIn"
+                      >
+                        <Icon name="linkedin" />
+                        <span>LinkedIn</span>
                       </a>
                     )}
                     {ig && (
@@ -138,8 +149,10 @@ export default async function TeamMemberPage({
                         target="_blank"
                         rel="noopener"
                         className="team-contact"
+                        aria-label="Instagram"
                       >
-                        📷 @{ig.replace(/^@/, '')}
+                        <Icon name="instagram" />
+                        <span>@{ig.replace(/^@/, '')}</span>
                       </a>
                     )}
                   </div>
