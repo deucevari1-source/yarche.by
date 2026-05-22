@@ -1082,6 +1082,14 @@ html:not([data-theme="light"]) .post-cta {
   color: var(--text);
   font-style: italic;
 }
+.case-detail-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin: 6px 0 22px;
+}
 .case-detail-body .md-table-wrap {
   overflow-x: auto;
   margin: 0 0 28px;

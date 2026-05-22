@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate">Контент-агентство</div>
-    <h1 class="delay-1">Контент, который <span class="highlight">работает</span> на бизнес</h1>
+    <h1 class="animate delay-1">Контент, который <span class="highlight">работает</span> на бизнес</h1>
     <p class="animate delay-2">Полный цикл создания контента: от стратегии до продакшна. Тексты, видео, графика, фото — всё под ключ, с единым стилем и привязкой к бизнес-целям.</p>
   </section>
 

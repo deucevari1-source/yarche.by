@@ -232,6 +232,33 @@ export function GlobalScripts() {
       phoneInput.addEventListener('keydown', onKeyDown);
     }
 
+    // Prefill from query params (?tariff=… & message=…) — used by /web/[feature]
+    // CTA buttons that route to /contact with the chosen service + intent line.
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const tariffParam = sp.get('tariff');
+      const messageParam = sp.get('message');
+      if (tariffParam) {
+        const sel = form.querySelector('.custom-select');
+        if (sel) {
+          sel.setAttribute('data-value', tariffParam);
+          const span = sel.querySelector('.custom-select-trigger span');
+          if (span) span.textContent = tariffParam;
+          sel.classList.add('has-value');
+          sel.querySelectorAll('.custom-select-option').forEach((o) => {
+            if (o.getAttribute('data-val') === tariffParam) o.classList.add('selected');
+            else o.classList.remove('selected');
+          });
+        }
+      }
+      if (messageParam) {
+        const ta = form.querySelector('textarea') as HTMLTextAreaElement | null;
+        if (ta && !ta.value) ta.value = messageParam;
+      }
+    } catch {
+      // best-effort prefill; never block the form on a URL parse error
+    }
+
     type State = 'ready' | 'sending' | 'success' | 'error';
     function setState(s: State) {
       btn!.disabled = s !== 'ready';

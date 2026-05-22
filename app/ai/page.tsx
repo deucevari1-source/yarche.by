@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate">Внедрение AI</div>
-    <h1 class="delay-1">Искусственный интеллект для вашего <span class="highlight">бизнеса</span></h1>
+    <h1 class="animate delay-1">Искусственный интеллект для вашего <span class="highlight">бизнеса</span></h1>
     <p class="animate delay-2">Не хайп, а конкретные инструменты, которые экономят часы работы и увеличивают прибыль. Внедряем AI-решения, которые окупаются в первый месяц.</p>
   </section>
 
@@ -109,7 +109,7 @@ const BODY = `<section class="inner-hero">
         <div class="expert-badge">
           <div class="expert-avatar">ВВ</div>
           <div>
-            <div class="expert-name"><a href="/team/vlad">Владислав Васильченко</a></div>
+            <div class="expert-name">Владислав Васильченко</div>
             <div class="expert-role">CEO, ЯРЧЕ</div>
           </div>
         </div>

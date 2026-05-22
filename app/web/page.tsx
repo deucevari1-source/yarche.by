@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate" style="background:rgba(255,107,0,0.15); border-color:rgba(255,107,0,0.3); color:var(--orange);">🔥 HOT — Создание сайтов</div>
-    <h1 class="delay-1">Сайты, которые <span class="highlight">конвертируют</span></h1>
+    <h1 class="animate delay-1">Сайты, которые <span class="highlight">конвертируют</span></h1>
     <p class="animate delay-2">Проектируем и разрабатываем веб-решения, которые не просто красиво выглядят, а приносят деньги. От лендинга до сложного e-commerce — с фокусом на UX, скорость и конверсию.</p>
   </section>
 
@@ -27,12 +27,12 @@ const BODY = `<section class="inner-hero">
     <h2 class="section-title animate delay-1">Веб-решения любой сложности</h2>
     <p class="section-desc animate delay-2">Каждый проект начинается с прототипа и пользовательских сценариев. Мы не рисуем макеты — мы проектируем путь клиента от первого визита до покупки.</p>
     <div class="features-list">
-      <div class="feature-item animate"><div class="feature-num">01</div><div><h4>Лендинги высокой конверсии</h4><p>Продающие одностраничники для запуска продуктов, рекламных кампаний и лидогенерации. Каждый экран проектируется по принципам нейромаркетинга: заголовок-крючок, социальные доказательства, чёткий CTA. Средняя конверсия наших лендингов — 8–12%.</p></div></div>
-      <div class="feature-item animate delay-1"><div class="feature-num">02</div><div><h4>Корпоративные сайты</h4><p>Многостраничные сайты с продуманной информационной архитектурой, CMS-панелью управления и интеграцией с CRM. Мультиязычность, блог, портфолио, калькуляторы — всё, что нужно для презентации бизнеса и генерации заявок.</p></div></div>
-      <div class="feature-item animate delay-2"><div class="feature-num">03</div><div><h4>Интернет-магазины</h4><p>Полноценные e-commerce платформы с каталогом, фильтрами, корзиной, интеграцией ЕРИП и банковских карт. Связка со складом, 1С, службами доставки. Личный кабинет покупателя с историей заказов и программой лояльности.</p></div></div>
-      <div class="feature-item animate delay-3"><div class="feature-num">04</div><div><h4>Веб-приложения и SaaS</h4><p>Кастомные платформы на React, Vue, Node.js: CRM-системы, личные кабинеты, маркетплейсы, системы бронирования. Микросервисная архитектура, REST API, real-time функционал через WebSocket.</p></div></div>
-      <div class="feature-item animate delay-4"><div class="feature-num">05</div><div><h4>Редизайн без потери позиций</h4><p>Обновляем устаревшие сайты с сохранением SEO-веса: правильные редиректы, миграция контента, сохранение структуры URL. Переводим с Bitrix на WordPress, с Tilda на кастом — безболезненно и без просадки трафика.</p></div></div>
-      <div class="feature-item animate delay-5"><div class="feature-num">06</div><div><h4>Техподдержка и развитие</h4><p>Абонентская поддержка после запуска: мониторинг аптайма, обновление CMS и плагинов, бэкапы, защита от взлома. Ежемесячное развитие: новые страницы, A/B тесты, интеграция новых сервисов.</p></div></div>
+      <div class="feature-item animate" href="/web/landing"><div class="feature-num">01</div><div><h4>Лендинги высокой конверсии</h4><p>Продающие одностраничники для запуска продуктов, рекламных кампаний и лидогенерации. Каждый экран проектируется по принципам нейромаркетинга: заголовок-крючок, социальные доказательства, чёткий CTA. Средняя конверсия наших лендингов — 8–12%.</p><span class="service-link">Подробнее →</span></div></div>
+      <div class="feature-item animate delay-1" href="/web/corporate"><div class="feature-num">02</div><div><h4>Корпоративные сайты</h4><p>Многостраничные сайты с продуманной информационной архитектурой, CMS-панелью управления и интеграцией с CRM. Мультиязычность, блог, портфолио, калькуляторы — всё, что нужно для презентации бизнеса и генерации заявок.</p><span class="service-link">Подробнее →</span></div></div>
+      <div class="feature-item animate delay-2" href="/web/shop"><div class="feature-num">03</div><div><h4>Интернет-магазины</h4><p>Полноценные e-commerce платформы с каталогом, фильтрами, корзиной, интеграцией ЕРИП и банковских карт. Связка со складом, 1С, службами доставки. Личный кабинет покупателя с историей заказов и программой лояльности.</p><span class="service-link">Подробнее →</span></div></div>
+      <div class="feature-item animate delay-3" href="/web/app"><div class="feature-num">04</div><div><h4>Веб-приложения и SaaS</h4><p>Кастомные платформы на React, Vue, Node.js: CRM-системы, личные кабинеты, маркетплейсы, системы бронирования. Микросервисная архитектура, REST API, real-time функционал через WebSocket.</p><span class="service-link">Подробнее →</span></div></div>
+      <div class="feature-item animate delay-4" href="/web/redesign"><div class="feature-num">05</div><div><h4>Редизайн без потери позиций</h4><p>Обновляем устаревшие сайты с сохранением SEO-веса: правильные редиректы, миграция контента, сохранение структуры URL. Переводим с Bitrix на WordPress, с Tilda на кастом — безболезненно и без просадки трафика.</p><span class="service-link">Подробнее →</span></div></div>
+      <div class="feature-item animate delay-5" href="/web/support"><div class="feature-num">06</div><div><h4>Техподдержка и развитие</h4><p>Абонентская поддержка после запуска: мониторинг аптайма, обновление CMS и плагинов, бэкапы, защита от взлома. Ежемесячное развитие: новые страницы, A/B тесты, интеграция новых сервисов.</p><span class="service-link">Подробнее →</span></div></div>
     </div>
   </section>
 
@@ -136,7 +136,7 @@ const BODY = `<section class="inner-hero">
         <div class="expert-badge">
           <div class="expert-avatar">ВВ</div>
           <div>
-            <div class="expert-name"><a href="/team/vlad">Владислав Васильченко</a></div>
+            <div class="expert-name">Владислав Васильченко</div>
             <div class="expert-role">CEO, ЯРЧЕ</div>
           </div>
         </div>

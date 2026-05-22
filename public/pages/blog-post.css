@@ -128,6 +128,106 @@ html[data-theme="light"] body{background:#F5F5F0}
 
 .post-body a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
 
+.post-body h2[id], .post-body h3[id] { scroll-margin-top: 24px; }
+
+.post-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 6px;
+  color: var(--text);
+}
+
+.post-body pre {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 0 0 20px;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+
+.post-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+  white-space: pre;
+}
+
+.post-toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 0 0 32px;
+}
+
+.post-toc-title {
+  font-family: var(--font-unbounded), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.post-toc ol {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 0.95rem;
+}
+
+.post-toc li { margin-bottom: 6px; }
+
+.post-toc a { color: var(--text); text-decoration: none; border-bottom: 1px dashed var(--border); }
+
+.post-toc a:hover { color: var(--yellow); border-bottom-color: var(--yellow); }
+
+.post-callout {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  margin: 0 0 24px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  border-left: 3px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.post-callout strong { color: var(--text); }
+
+.post-callout p { margin: 0; }
+
+.post-callout p + p { margin-top: 8px; }
+
+.post-body figure {
+  margin: 28px 0;
+}
+
+.post-body figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.post-body figcaption {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-top: 8px;
+  text-align: center;
+}
+
 .post-author {
   margin-top: 48px;
   padding-top: 32px;
@@ -149,6 +249,13 @@ html[data-theme="light"] body{background:#F5F5F0}
   font-size: 1rem;
   color: var(--black);
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.post-author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .post-author-name {

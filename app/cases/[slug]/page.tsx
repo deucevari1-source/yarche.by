@@ -40,16 +40,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function CasePreview({ c }: { c: CaseMeta }) {
   const p = c.preview;
   if (p?.type === 'screenshot' && p.src) {
+    // SVG goes through a plain <img>: next/Image refuses SVG without
+    // dangerouslyAllowSVG, and there's nothing to optimise about a vector.
+    const isSvg = p.src.toLowerCase().endsWith('.svg');
     return (
       <div className="case-detail-cover scroll-preview">
-        <Image
-          src={p.src}
-          alt={p.alt || c.title}
-          width={1600}
-          height={1000}
-          sizes="(max-width: 900px) 100vw, 900px"
-          priority
-        />
+        {isSvg ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={p.src}
+            alt={p.alt || c.title}
+            width={1600}
+            height={1000}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        ) : (
+          <Image
+            src={p.src}
+            alt={p.alt || c.title}
+            width={1600}
+            height={1000}
+            sizes="(max-width: 900px) 100vw, 900px"
+            priority
+          />
+        )}
       </div>
     );
   }

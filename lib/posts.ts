@@ -3,6 +3,16 @@ import { join } from 'node:path';
 
 const POSTS_PATH = join(process.cwd(), 'content', 'posts.json');
 
+export interface HowToStep {
+  name: string;
+  text: string;
+}
+
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
 export interface Post {
   slug: string;
   title: string;
@@ -13,8 +23,13 @@ export interface Post {
   cover?: string;
   coverAlt?: string;
   author?: string;
+  authorRole?: string;
+  authorPhoto?: string;
   readTime?: string;
   content: string;
+  howToName?: string;
+  howToSteps?: HowToStep[];
+  faq?: FaqItem[];
 }
 
 interface PostsFile {

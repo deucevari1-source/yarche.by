@@ -77,8 +77,12 @@
       "category": "app",
       "industry": "Beauty-индустрия",
       "year": "2026",
-      "url": "",
-      "preview": { "type": "placeholder", "gradient": ["#831843", "#a21caf", "#fbcfe8"] },
+      "url": "https://hair-atalier.vercel.app",
+      "preview": {
+        "type": "screenshot",
+        "src": "/images/cases/hair-atelier/home-loggedin.webp",
+        "alt": "Hair Atelier — главная страница для авторизованного клиента"
+      },
       "summary": "Прямой конкурент YCLIENTS и DIKIDI: онлайн-запись, админ-CRM, Telegram-бот для администраторов, своя система клиентских сообщений и автогенерация повторных записей.",
       "metrics": [
         { "num": "24/7", "label": "приём онлайн-записей" },
@@ -95,7 +99,11 @@
       "industry": "Автоматизация",
       "year": "2026",
       "url": "",
-      "preview": { "type": "placeholder", "gradient": ["#064e3b", "#0891b2", "#a5f3fc"] },
+      "preview": {
+        "type": "screenshot",
+        "src": "/images/cases/ai-vlad-cover.svg",
+        "alt": "AI-сотрудник — иконка чата"
+      },
       "summary": "Внедрение AI-агента в рабочие процессы заказчика: обработка лидов, типовая переписка, классификация задач и подготовка ответов. Снижение нагрузки на менеджеров.",
       "metrics": [
         { "num": "AI", "label": "автоматизация" },

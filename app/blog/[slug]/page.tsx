@@ -75,6 +75,32 @@ export default async function BlogPostPage({ params }: PageProps) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
   };
 
+  const howToSchema = post.howToSteps?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: post.howToName || post.title,
+        description: post.excerpt,
+        step: post.howToSteps.map((s) => ({
+          '@type': 'HowToStep',
+          name: s.name,
+          text: s.text,
+        })),
+      }
+    : null;
+
+  const faqSchema = post.faq?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: post.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null;
+
   return (
     <>
       <link rel="stylesheet" href="/pages/blog-post.css" />
@@ -82,6 +108,18 @@ export default async function BlogPostPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+      )}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <main>
         <div id="postContainer">
           <div className="post-wrap">
@@ -122,12 +160,25 @@ export default async function BlogPostPage({ params }: PageProps) {
               dangerouslySetInnerHTML={{ __html: post.content || '' }}
             />
             <div className="post-author">
-              <div className="post-author-avatar">ЯР</div>
+              <div className="post-author-avatar">
+                {post.authorPhoto ? (
+                  <Image
+                    src={post.authorPhoto}
+                    alt={post.author || 'Команда ЯРЧЕ'}
+                    width={48}
+                    height={48}
+                  />
+                ) : (
+                  'ЯР'
+                )}
+              </div>
               <div>
                 <div className="post-author-name">
                   {post.author || 'Команда ЯРЧЕ'}
                 </div>
-                <div className="post-author-role">Digital-агентство ЯРЧЕ, Минск</div>
+                <div className="post-author-role">
+                  {post.authorRole || 'Digital-агентство ЯРЧЕ, Минск'}
+                </div>
               </div>
             </div>
             <div className="post-cta">

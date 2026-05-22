@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const BODY = `<section class="inner-hero">
     <div class="hero-badge animate">Связаться с нами</div>
-    <h1 class="delay-1">Давайте обсудим ваш <span class="highlight">проект</span></h1>
+    <h1 class="animate delay-1">Давайте обсудим ваш <span class="highlight">проект</span></h1>
     <p class="animate delay-2">Расскажите о задаче — мы предложим оптимальное решение и рассчитаем стоимость в течение 24 часов.</p>
   </section>
   <section class="contact-section" style="padding-top:20px;">
