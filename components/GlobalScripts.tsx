@@ -6,14 +6,34 @@ import { installTracker, track } from '@/lib/analytics/client';
 
 const API_URL = 'https://bot.yarche.by:5050/api/lead';
 
+type YmFn = ((id: number, action: string, ...args: unknown[]) => void) & {
+  a?: unknown[][];
+  l?: number;
+};
+
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
-    ym?: (id: number, action: string, ...args: unknown[]) => void;
+    ym?: YmFn;
   }
 }
 
 const YM_ID = 109348823;
+
+// Metrica's loader runs on `lazyOnload`, so window.ym may not exist when an
+// early click/scroll fires. Make our own stub that queues args; the real
+// tag.js drains the queue once it loads.
+function fireGoal(goal: string, params?: Record<string, unknown>) {
+  if (typeof window === 'undefined') return;
+  if (!window.ym) {
+    const stub = function (...args: unknown[]) {
+      (stub.a = stub.a || []).push(args);
+    } as YmFn;
+    stub.l = Date.now();
+    window.ym = stub;
+  }
+  window.ym(YM_ID, 'reachGoal', goal, params);
+}
 
 const HOVER_SELECTOR =
   'a,button,.service-card,.service-full,.price-card,.review-card,.feature-item,.synergy-card,.step-card';
@@ -77,7 +97,7 @@ export function GlobalScripts() {
           if (e.isIntersecting && !fired) {
             fired = true;
             track('scroll_footer', { page: document.title || location.pathname });
-            window.ym?.(YM_ID, 'reachGoal', 'scroll_footer');
+            fireGoal('scroll_footer');
             io.disconnect();
           }
         }
@@ -136,12 +156,12 @@ export function GlobalScripts() {
       if (window.location.pathname === '/web') {
         if (card.classList.contains('feature-item')) {
           track('feature_click', { href, page: document.title || location.pathname });
-          window.ym?.(YM_ID, 'reachGoal', 'feature_click', { href });
+          fireGoal('feature_click', { href });
         } else if (card.classList.contains('price-btn')) {
           const tariff =
             new URL(href, window.location.origin).searchParams.get('tariff') || '';
           track('cta_click', { tariff, href, page: document.title || location.pathname });
-          window.ym?.(YM_ID, 'reachGoal', 'cta_click', { tariff, href });
+          fireGoal('cta_click', { tariff, href });
         }
       }
       if (card.tagName === 'A' && card.getAttribute('target') === '_blank') return;
@@ -158,7 +178,7 @@ export function GlobalScripts() {
         else if (href.includes('t.me/') || href.includes('wa.me/')) goal = 'messenger_click';
         if (goal) {
           track(goal, { href, page: document.title || location.pathname });
-          window.ym?.(YM_ID, 'reachGoal', goal, { href });
+          fireGoal(goal, { href });
         }
         return;
       }
@@ -373,7 +393,7 @@ export function GlobalScripts() {
         .then(() => {
           setState('success');
           track('form_submit', { service: d.service, page: d.page });
-          window.ym?.(YM_ID, 'reachGoal', 'form_submit', { service: d.service, page: d.page });
+          fireGoal('form_submit', { service: d.service, page: d.page });
           form!.querySelectorAll('input').forEach((i, idx) => {
             (i as HTMLInputElement).value = idx === 1 ? '+375 (' : '';
           });
