@@ -65,6 +65,29 @@ export function GlobalScripts() {
     window.ym?.(YM_ID, 'hit', window.location.origin + url, { title: document.title });
   }, [pathname]);
 
+  // /web: fire `scroll_footer` reachGoal once per page load when footer appears in viewport
+  useEffect(() => {
+    if (pathname !== '/web') return;
+    const footer = document.querySelector('footer.footer');
+    if (!footer) return;
+    let fired = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting && !fired) {
+            fired = true;
+            track('scroll_footer', { page: document.title || location.pathname });
+            window.ym?.(YM_ID, 'reachGoal', 'scroll_footer');
+            io.disconnect();
+          }
+        }
+      },
+      { threshold: 0.1 },
+    );
+    io.observe(footer);
+    return () => io.disconnect();
+  }, [pathname]);
+
   // Custom-select dropdown + div[href] click navigation — document delegation
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -110,6 +133,17 @@ export function GlobalScripts() {
       if (!card) return;
       const href = card.getAttribute('href');
       if (!href) return;
+      if (window.location.pathname === '/web') {
+        if (card.classList.contains('feature-item')) {
+          track('feature_click', { href, page: document.title || location.pathname });
+          window.ym?.(YM_ID, 'reachGoal', 'feature_click', { href });
+        } else if (card.classList.contains('price-btn')) {
+          const tariff =
+            new URL(href, window.location.origin).searchParams.get('tariff') || '';
+          track('cta_click', { tariff, href, page: document.title || location.pathname });
+          window.ym?.(YM_ID, 'reachGoal', 'cta_click', { tariff, href });
+        }
+      }
       if (card.tagName === 'A' && card.getAttribute('target') === '_blank') return;
       if (
         href.startsWith('http://') ||
@@ -118,7 +152,14 @@ export function GlobalScripts() {
         href.startsWith('tel:') ||
         href.startsWith('#')
       ) {
-        // Let the browser handle external links and anchors natively.
+        let goal: string | null = null;
+        if (href.startsWith('tel:')) goal = 'phone_click';
+        else if (href.startsWith('mailto:')) goal = 'email_click';
+        else if (href.includes('t.me/') || href.includes('wa.me/')) goal = 'messenger_click';
+        if (goal) {
+          track(goal, { href, page: document.title || location.pathname });
+          window.ym?.(YM_ID, 'reachGoal', goal, { href });
+        }
         return;
       }
       e.preventDefault();
@@ -332,6 +373,7 @@ export function GlobalScripts() {
         .then(() => {
           setState('success');
           track('form_submit', { service: d.service, page: d.page });
+          window.ym?.(YM_ID, 'reachGoal', 'form_submit', { service: d.service, page: d.page });
           form!.querySelectorAll('input').forEach((i, idx) => {
             (i as HTMLInputElement).value = idx === 1 ? '+375 (' : '';
           });
