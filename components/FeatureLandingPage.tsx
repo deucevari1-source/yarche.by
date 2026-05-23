@@ -43,7 +43,7 @@ export function FeatureLandingPage({ feature: f }: { feature: LandingFeature }) 
               <Link className="wf-author-inline" href={`/team/${f.author.slug}`}>
                 {f.author.photo ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img className="wf-author-byline-photo" src={f.author.photo} alt={f.author.name} />
+                  <img className="wf-author-byline-photo" src={f.author.photo} alt={f.author.name} width={32} height={32} />
                 ) : (
                   <div className="wf-author-byline-avatar">
                     {f.author.name
