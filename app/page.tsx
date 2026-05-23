@@ -31,16 +31,16 @@ export default function HomePage() {
       <main>
         <section className="hero">
           <div className="hero-inner">
-            <div className="hero-badge">Минск и вся Беларусь</div>
-            <h1>
+            <div className="hero-badge animate">Минск и вся Беларусь</div>
+            <h1 className="delay-1">
               Делаем ваш бизнес <span className="highlight">ярче</span> в digital
             </h1>
-            <p>
+            <p className="animate delay-2">
               Создание сайтов, SEO, контент, Telegram-боты и внедрение
               AI-решений. Комплексный подход к цифровой трансформации бизнеса в
               Беларуси.
             </p>
-            <div className="hero-buttons">
+            <div className="hero-buttons animate delay-3">
               <Link className="btn-primary" href="/contact">
                 Получить предложение →
               </Link>

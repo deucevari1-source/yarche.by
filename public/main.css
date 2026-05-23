@@ -634,6 +634,17 @@ body { font-family: var(--font-onest), sans-serif; background: var(--bg); color:
 .animate.delay-4 { animation-delay: 0.4s; }
 .animate.delay-5 { animation-delay: 0.5s; }
 
+/* Mobile: kill above-the-fold hero fade-in — opacity:0 → 1 transitions push
+   LCP right on slow networks and tank the PSI score. Below-fold stays animated. */
+@media (max-width: 1024px) {
+  .hero .hero-badge.animate,
+  .hero .hero-inner > p.animate,
+  .hero .hero-buttons.animate {
+    opacity: 1;
+    animation: none;
+  }
+}
+
 /* MOBILE NAV */
 .mobile-nav {
   display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
