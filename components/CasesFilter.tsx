@@ -18,17 +18,6 @@ export function CasesFilter() {
 
     if (buttons.length === 0 || cards.length === 0) return;
 
-    const counts: Record<string, number> = { all: cards.length };
-    for (const c of cards) {
-      const cat = c.dataset.category || 'other';
-      counts[cat] = (counts[cat] || 0) + 1;
-    }
-    for (const b of buttons) {
-      const f = b.dataset.filter || 'all';
-      const span = b.querySelector('.count');
-      if (span) span.textContent = String(counts[f] || 0);
-    }
-
     let currentFilter = 'all';
     let showAll = false;
 

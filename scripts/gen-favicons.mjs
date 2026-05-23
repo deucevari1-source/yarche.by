@@ -22,7 +22,6 @@ const PUBLIC = resolve('public');
 // Brand
 const BG = '#0A0A0A';
 const FG = '#FFE500'; // yellow letter
-const DOT = '#FF6B00'; // orange accent
 const RADIUS = 14;     // rounded square corner (SVG units = 64)
 const GLYPH = 'Я';
 
@@ -59,7 +58,6 @@ const d = path.toPathData(2);
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="${RADIUS}" fill="${BG}"/>
   <path d="${d}" fill="${FG}"/>
-  <circle cx="48" cy="16" r="3" fill="${DOT}"/>
 </svg>
 `;
 

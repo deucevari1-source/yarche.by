@@ -57,7 +57,7 @@ const BODY = `<section class="inner-hero">
           <li>Форма заявки + CRM</li>
           <li>SEO-оптимизация из коробки</li>
           <li>Мультиязычность</li>
-          <li>Поддержка 2 месяца</li>
+          <li>Поддержка 1 месяц</li>
         </ul>
         <a class="price-btn price-btn-orange" href="/contact?tariff=Лендинг">Оставить заявку</a>
       </div>
@@ -74,7 +74,7 @@ const BODY = `<section class="inner-hero">
           <li>Личный кабинет</li>
           <li>Интеграция со складом</li>
           <li>SEO-оптимизация</li>
-          <li>Поддержка 5 месяцев</li>
+          <li>Поддержка 3 месяца</li>
         </ul>
         <a class="price-btn price-btn-outline" href="/contact?tariff=Интернет-магазин">Оставить заявку</a>
       </div>
@@ -100,7 +100,7 @@ const BODY = `<section class="inner-hero">
             <li>REST / GraphQL / tRPC API</li>
             <li>CI/CD + деплой на Vercel / VPS</li>
             <li>Core Web Vitals 95+</li>
-            <li>Поддержка 6 месяцев</li>
+            <li>Поддержка 3 месяца</li>
           </ul>
           <div class="react-examples">
             <a href="#" title="Пример">SaaS-платформа</a>
@@ -136,7 +136,7 @@ const BODY = `<section class="inner-hero">
         <div class="expert-badge">
           <div class="expert-avatar">ВВ</div>
           <div>
-            <div class="expert-name">Владислав Васильченко</div>
+            <div class="expert-name"><a href="/team/vlad">Владислав Васильченко</a></div>
             <div class="expert-role">CEO, ЯРЧЕ</div>
           </div>
         </div>

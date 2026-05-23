@@ -107,7 +107,7 @@ const BODY = `<section class="inner-hero">
         <div class="expert-badge">
           <div class="expert-avatar">ВВ</div>
           <div>
-            <div class="expert-name">Владислав Васильченко</div>
+            <div class="expert-name"><a href="/team/vlad">Владислав Васильченко</a></div>
             <div class="expert-role">CEO, ЯРЧЕ</div>
           </div>
         </div>
