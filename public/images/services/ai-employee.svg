@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @font-face {
+        font-family: 'Unbounded';
+        src: url('https://yarche.by/fonts/unbounded-v12-cyrillic_latin-800.woff2') format('woff2');
+        font-weight: 800;
+        font-style: normal;
+        font-display: block;
+      }
+      .brand { font-family: 'Unbounded', 'Arial Black', 'Helvetica Neue', sans-serif; font-weight: 800; }
+    ]]></style>
+    <linearGradient id="bgAiEmp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#2a1a05"/>
+    </linearGradient>
+    <radialGradient id="glowAiEmp" cx="50%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#ffe500" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffe500" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgAiEmp)"/>
+  <rect width="1200" height="630" fill="url(#glowAiEmp)"/>
+  <text x="600" y="290" class="brand" font-size="200" fill="#ffe500" text-anchor="middle">🤖</text>
+  <text x="600" y="420" class="brand" font-size="64" fill="#ffffff" text-anchor="middle" letter-spacing="-2">AI-СОТРУДНИК</text>
+  <rect x="500" y="450" width="200" height="6" rx="3" fill="#ff6b00"/>
+  <text x="600" y="560" class="brand" font-size="32" fill="#ff6b00" text-anchor="middle" letter-spacing="-1">ЯРЧЕ</text>
+</svg>
