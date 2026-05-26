@@ -293,6 +293,20 @@ export function GlobalScripts() {
       phoneInput.addEventListener('keydown', onKeyDown);
     }
 
+    // First-interaction tracking: fires once per page load when the user
+    // touches any field (input/textarea focus or custom-select click).
+    let formFocusFired = false;
+    const onFirstFocus = () => {
+      if (formFocusFired) return;
+      formFocusFired = true;
+      const pageName = document.title || location.pathname;
+      track('form_focus', { page: pageName });
+      fireGoal('form_focus', { page: pageName });
+    };
+    form.addEventListener('focusin', onFirstFocus);
+    const selectTrigger = form.querySelector('.custom-select-trigger');
+    selectTrigger?.addEventListener('click', onFirstFocus);
+
     // Prefill from query params (?tariff=… & message=…) — used by /web/[feature]
     // CTA buttons that route to /contact with the chosen service + intent line.
     try {
@@ -416,6 +430,8 @@ export function GlobalScripts() {
 
     return () => {
       btn.removeEventListener('click', onSubmit);
+      form.removeEventListener('focusin', onFirstFocus);
+      selectTrigger?.removeEventListener('click', onFirstFocus);
       if (phoneInput) {
         phoneInput.removeEventListener('focus', onFocus);
         phoneInput.removeEventListener('input', onPhoneInput);
