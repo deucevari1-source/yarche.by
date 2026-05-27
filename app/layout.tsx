@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { join } from 'node:path';
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import localFont from 'next/font/local';
@@ -6,6 +9,15 @@ import { SiteFooter } from '@/components/SiteFooter';
 import { GlobalScripts } from '@/components/GlobalScripts';
 import { AnalyticsScripts, AnalyticsNoscript } from '@/components/Analytics';
 import './globals.css';
+
+// Content hash for /main.css → lets us cache-bust via ?v=<hash> while serving
+// the file with max-age=1y (see next.config.ts headers). Computed once at
+// server start; a CSS edit + restart yields a new hash automatically.
+const MAIN_CSS_HASH = createHash('sha1')
+  .update(readFileSync(join(process.cwd(), 'public', 'main.css')))
+  .digest('hex')
+  .slice(0, 8);
+const MAIN_CSS_HREF = `/main.css?v=${MAIN_CSS_HASH}`;
 
 // next/font/local: emits @font-face inline, auto-preloads, generates
 // adjustFontFallback metrics so the system fallback occupies the same box
@@ -132,7 +144,8 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT}
         </Script>
-        <link rel="stylesheet" href="/main.css" />
+        <link rel="preload" href={MAIN_CSS_HREF} as="style" />
+        <link rel="stylesheet" href={MAIN_CSS_HREF} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD_ORG) }}

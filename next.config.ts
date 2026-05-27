@@ -1,6 +1,20 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  async headers() {
+    // /main.css is loaded via versioned href (/main.css?v=<hash>) from layout.tsx,
+    // so it's safe to long-cache. Without this Next would default public/ assets to
+    // max-age=0, which both inflates LCP on repeat visits and trips PSI's "efficient
+    // cache policy" audit.
+    return [
+      {
+        source: '/main.css',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // /blog-post?slug=X → /blog/X (legacy querystring permalink → clean path).
